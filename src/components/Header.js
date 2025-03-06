@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-import {
-  FaPhone,
-  FaEnvelope,
-  FaSearch,
-  FaMapMarkerAlt,
-  FaShoppingCart,
-  FaBell,
-  FaCar,
-  FaWindowRestore,
-  FaBars,
-} from 'react-icons/fa';
+import { LayoutGrid, MapPin, Search, PhoneCall, Mail, CarFront, Bell, ShoppingCart } from 'lucide-react';
+import { FaBars } from 'react-icons/fa';
 import Footer from './footer';
 import Pharmacy from '../pages/pharmacy';
-import profile from '../images/profile.PNG'
+import profile from '../images/profile.PNG';
+// importing components
+import AppButton from '../components/AppButton';
+import FormInput from '../components/FormInput';
 
 const Header = () => {
   // Setting Pharmacy as the default active tab
   const [activeTab, setActiveTab] = useState('Pharmacy');
   const [showMessage, setShowMessage] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [location, setLocation] = useState('Kansanga');
 
   const handleNavClick = (tabName) => {
     setActiveTab(tabName);
@@ -42,7 +37,9 @@ const Header = () => {
     }
   };
 
-
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+  };
 
   return (
     <div className="font-sans min-h-screen flex flex-col">
@@ -50,21 +47,21 @@ const Header = () => {
         {/* Top Header */}
         <div className="flex justify-between items-center p-2.5 text-sm border-b border-gray-300">
           <div className="flex items-center gap-2.5">
-            <FaPhone className="text-blue-500" />
+            <PhoneCall className="text-blue-500" />
             <span>0200898888</span>
-            <FaEnvelope className="text-blue-500" />
+            <Mail className="text-blue-500" />
             <span>helpdesk@ncre.com</span>
           </div>
-          {/* Header Links */}
+          {/* Top Header Links */}
           <div className="hidden md:flex items-center gap-2.5">
             <span className="w-px h-4 bg-gray-500 mx-2.5"></span>
 
             <span>
-              <FaCar className="text-gray-500 mr-1" /> How it works
+              <CarFront className="text-gray-500 mr-1" /> How it works
             </span>
             <span className="w-px h-4 bg-gray-500 mx-2.5"></span>
             <span>
-              <FaCar className="text-gray-500 mr-1" /> Help Center
+              <CarFront className="text-gray-500 mr-1" /> Help Center
             </span>
           </div>
         </div>
@@ -73,20 +70,24 @@ const Header = () => {
         <div className="flex flex-col p-4 border-t border-gray-300">
           <div className="flex justify-between items-start mb-4">
             <div className="flex flex-col">
-              <h1 className="text-blue-500 text-2xl font-bold">loggo.</h1>
-              <button className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full mt-2">
-                <FaWindowRestore className="text-white" />
-                <span>SHOP BY CATEGORIES</span>
-              </button>
+              <h1 className="text-blue-500 text-2xl font-bold">ncare.</h1>
+              <AppButton
+                variant="primary"
+                className="rounded-full mt-2"
+                leftIcon={<LayoutGrid />}
+              >
+                SHOP BY CATEGORIES
+              </AppButton>
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button
-              className="md:hidden text-blue-500"
+            <AppButton
+              variant="secondary"
+              className="md:hidden p-2 bg-transparent"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <FaBars className="text-2xl" />
-            </button>
+              <FaBars className="text-2xl text-blue-500" />
+            </AppButton>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
@@ -103,30 +104,30 @@ const Header = () => {
                   </span>
                 )
               )}
-            <div className="flex items-center gap-4">
-            <FaShoppingCart className="text-blue-500" />
-            <FaBell className="text-blue-500" />
-            
-            {/* User Profile Image with Upload Option */}
-            <div className="relative">
-              <input 
-                type="file" 
-                accept="image/*"
-                className="hidden" 
-                id="profileImageUpload"
-                onChange={handleImageUpload}
-              />
-              <label htmlFor="profileImageUpload" className="cursor-pointer">
-                <div className="bg-white rounded-full p-1 border-2 border-blue-500">
-                  <img 
-                    src={profileImage} 
-                    alt="User Profile" 
-                    className="w-8 h-8 rounded-full object-cover hover:opacity-75"
+              <div className="flex items-center gap-4">
+                <ShoppingCart className="text-blue-500" />
+                <Bell className="text-blue-500" />
+                
+                {/* User Profile Image with Upload Option */}
+                <div className="relative">
+                  <input 
+                    type="file" 
+                    accept="image/*"
+                    className="hidden" 
+                    id="profileImageUpload"
+                    onChange={handleImageUpload}
                   />
+                  <label htmlFor="profileImageUpload" className="cursor-pointer">
+                    <div className="bg-white rounded-full p-1 border-2 border-blue-500">
+                      <img 
+                        src={profileImage} 
+                        alt="User Profile" 
+                        className="w-8 h-8 rounded-full object-cover hover:opacity-75"
+                      />
+                    </div>
+                  </label>
                 </div>
-              </label>
-            </div>
-          </div>
+              </div>
             </nav>
           </div>
 
@@ -147,15 +148,15 @@ const Header = () => {
                 )
               )}
               <div className="flex items-center gap-4">
-                <FaShoppingCart className="text-blue-500" />
-                <FaBell className="text-blue-500" />
-                  {/* Circular area for user profile*/}
-                  <div className=" bg-white rounded-full p-1">
-                    <img
-                      src="https://via.placeholder.com/30"
-                      alt="User"
-                      className="w-6 h-6 rounded-full"
-                    />
+                <ShoppingCart className="text-blue-500" />
+                <Bell className="text-blue-500" />
+                {/* Circular area for user profile*/}
+                <div className="bg-white rounded-full p-1">
+                  <img
+                    src={profileImage}
+                    alt="User"
+                    className="w-6 h-6 rounded-full"
+                  />
                 </div>
               </div>
             </div>
@@ -164,28 +165,44 @@ const Header = () => {
           {/* Search and Upload Rx Section */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:pl-[calc(12rem)] mt-4 md:-mt-2">
             {/* Search Container */}
-            <div className="flex items-center bg-blue-50 rounded-full p-2 w-full md:max-w-2xl border border-blue-600">
-              <div className="flex items-center bg-blue-500 rounded-l-full px-3 py-1">
-                <select className="bg-blue-500 text-white border-none outline-none">
-                  <option>Kansanga</option>
-                  <option>Kabuuma</option>
-                  <option>Kalangala</option>
-                  <option>Massajja</option>
-                  <option>Wadegeya</option>
-                  <option>Masaka</option>
-                </select>
-                <FaMapMarkerAlt className="text-black ml-2" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search medicines and health products"
-                className="bg-blue-50 px-4 py-2 w-full outline-none"
-              />
-              <FaSearch className="text-blue-500 mr-2" />
-            </div>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-full whitespace-nowrap w-full md:w-auto">
+            <div className="relative flex items-center w-full md:max-w-2xl">
+  {/* Left section with curved edge - select dropdown */}
+  <div className="relative flex items-center bg-blue-500 rounded-l-full px-3 py-2 z-10">
+    <select 
+      className="bg-blue-500 text-white border-none outline-none pr-6" 
+      value={location} 
+      onChange={handleLocationChange}
+    >
+      <option>Kansanga</option>
+      <option>Kabuuma</option>
+      <option>Kalangala</option>
+      <option>Massajja</option>
+      <option>Wadegeya</option>
+      <option>Masaka</option>
+    </select>
+    <MapPin className="text-white ml-1" size={16} />
+    
+    {/* Curved extension that overlaps with right section */}
+    <div className="absolute -right-4 top-0 h-full w-6 bg-blue-500 z-0">
+      <div className="absolute top-0 right-0 h-full w-8 bg-blue-50 rounded-l-full" />
+    </div>
+  </div>
+  
+  {/* Right section - search input */}
+  <div className="flex items-center bg-blue-50 flex-grow rounded-r-full pl-6 pr-3 py-2 border border-blue-600 border-l-0">
+    <input
+      type="text"
+      placeholder="Search medicines and health products"
+      className="bg-blue-50 w-full outline-none border-0"
+    />
+    <Search className="text-blue-500 ml-2" size={18} />
+  </div>
+</div>            <AppButton
+              variant="primary"
+              className="rounded-full whitespace-nowrap w-full md:w-auto"
+            >
               Upload Rx
-            </button>
+            </AppButton>
           </div>
         </div>
         {/* Bottom Line */}
