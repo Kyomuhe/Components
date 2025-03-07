@@ -165,46 +165,42 @@ const Header = () => {
           {/* Search and Upload Rx Section */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:pl-[calc(12rem)] mt-4 md:-mt-2">
             {/* Search Container */}
-            <div className="relative flex items-center w-full md:max-w-2xl">
-  {/* Left section with curved edge - select dropdown */}
-  <div className="relative flex items-center bg-blue-500 rounded-l-full px-3 py-2 z-10">
-    <select 
-      className="bg-blue-500 text-white border-none outline-none pr-6" 
-      value={location} 
-      onChange={handleLocationChange}
-    >
-      <option>Kansanga</option>
-      <option>Kabuuma</option>
-      <option>Kalangala</option>
-      <option>Massajja</option>
-      <option>Wadegeya</option>
-      <option>Masaka</option>
-    </select>
-    <MapPin className="text-white ml-1" size={16} />
-    
-    {/* Curved extension that overlaps with right section */}
-    <div className="absolute -right-4 top-0 h-full w-6 bg-blue-500 z-0">
-      <div className="absolute top-0 right-0 h-full w-8 bg-blue-50 rounded-l-full" />
-    </div>
-  </div>
-  
-  {/* Right section - search input */}
-  <div className="flex items-center bg-blue-50 flex-grow rounded-r-full pl-6 pr-3 py-2 border border-blue-600 border-l-0">
-    <input
-      type="text"
-      placeholder="Search medicines and health products"
-      className="bg-blue-50 w-full outline-none border-0"
-    />
-    <Search className="text-blue-500 ml-2" size={18} />
-  </div>
-</div>            <AppButton
-              variant="primary"
-              className="rounded-full whitespace-nowrap w-full md:w-auto"
-            >
-              Upload Rx
-            </AppButton>
-          </div>
-        </div>
+            <div className="relative flex items-center w-full md:max-w-2xl border border-blue-600 rounded-full">              <div className="relative flex items-center bg-blue-500 rounded-l-full px-3 py-2 z-10">
+              <MapPin className="text-white ml-1" size={16} />
+ 
+                <select 
+                className="bg-blue-500 text-white border-none outline-none pr-6" 
+                value={location} 
+                onChange={handleLocationChange}
+                >
+                  <option>Kansanga</option>
+                  <option>Kabuuma</option>
+                  <option>Kalangala</option>
+                  <option>Massajja</option>
+                  <option>Wadegeya</option>
+                  <option>Masaka</option>
+                </select>
+                <div className="absolute -right-4 top-0 h-full w-6 bg-blue-500 z-0">
+                  <div className="absolute top-0 right-0 h-full w-8 bg-blue-50 rounded-l-full" />
+                  </div>
+                  </div>
+                  {/*  search input */}
+                  <div className="flex items-center bg-blue-50 flex-grow rounded-r-full pl-6 pr-3 py-2 ">
+                    <input
+                    type="text"
+                    placeholder="Search medicines and health products"
+                    className="bg-blue-50 w-full outline-none border-0"
+                    />
+                    <Search className="text-blue-500 ml-2" size={18} />
+                    </div>
+                    </div>
+                    <AppButton
+                    variant="primary"
+                    className="rounded-full whitespace-nowrap w-full md:w-auto">
+                      Upload Rx
+                      </AppButton>
+                      </div>
+                      </div>
         {/* Bottom Line */}
         <div className="h-px bg-gray-300 w-full"></div>
       </div>

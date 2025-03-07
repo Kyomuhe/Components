@@ -5,7 +5,7 @@ import image2 from '../images/image2.PNG';
 import image3 from '../images/image3.PNG';
 import image4 from '../images/image4.PNG';
 import image5 from '../images/image5.PNG';
-import image6 from '../images/image6.PNG';
+import image6 from '../images/image6.jpeg';
 import image7 from '../images/image7.PNG';
 import image8 from '../images/image8.PNG';
 import image9 from '../images/image9.PNG';
@@ -13,6 +13,7 @@ import image10 from '../images/image10.PNG';
 
 import { FaGoogle } from 'react-icons/fa';
 // Importing components
+import PhoneField from '../components/PhoneField';
 import AppButton from '../components/AppButton';
 import FormInput from '../components/FormInput';
 const Pharmacy = () => {
@@ -25,6 +26,9 @@ const Pharmacy = () => {
     email: '',
     password: ''
   });
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+
   
   const [autoLogout, setAutoLogout] = useState(false);
 
@@ -111,7 +115,13 @@ const Pharmacy = () => {
               value={formData.password}
               onChange={handleChange}
             />
-            
+            <PhoneField
+            value={phoneNumber}
+            onChange={setPhoneNumber}
+            defaultCountry="US"
+            required
+            label="Contact Phone"
+            />
             <div className="mb-6">
               <label className="flex items-center space-x-2">
                 <input
@@ -150,7 +160,6 @@ const Pharmacy = () => {
               Sign in with Google
             </AppButton>
 
-            {/* Footer Links */}
             <p className="text-center text-gray-600 mb-2">
               Forgot password? <a href="#" className="text-red-600">Reset it</a>
             </p>
