@@ -1,10 +1,12 @@
 import React from 'react';
 //importing icons form lucid react
 import { Twitter, Facebook, Instagram, Linkedin, MailOpen, Play } from 'lucide-react';
+import AppButton from '../components/AppButton';
+
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white">
+    <footer className=" bg-custom-blue text-white">
       {/* Subscription Section */}
       <div className="bg-blue-200 p-8 w-full">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-x-7">
@@ -19,12 +21,11 @@ const Footer = () => {
               placeholder="Email Address"
               className="p-2 border border-blue-600 rounded-lg bg-white w-full md:w-auto"
             />
-            <button
-              type="button"
-              className="bg-blue-600 text-white py-2 px-4 rounded-lg w-full md:w-auto"
-            >
+            <AppButton
+            variant="primary"
+            className="rounded-full whitespace-nowrap w-full md:w-auto">
               Subscribe
-            </button>
+            </AppButton>
           </div>
         </div>
       </div>
