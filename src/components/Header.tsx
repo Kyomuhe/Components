@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FC } from 'react';
 import { LayoutGrid, MapPin, Search, PhoneCall, Mail, CarFront, Bell, ShoppingCart } from 'lucide-react';
 import { FaBars } from 'react-icons/fa';
 import Footer from './footer';
@@ -8,14 +8,20 @@ import profile from '../images/profile.PNG';
 import AppButton from '../components/AppButton';
 import FormInput from '../components/FormInput';
 
-const Header = () => {
-  // Setting Pharmacy as the default active tab
-  const [activeTab, setActiveTab] = useState('Pharmacy');
-  const [showMessage, setShowMessage] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
-  const [location, setLocation] = useState('Kansanga');
+// Define types for the component's props, if any
+interface HeaderProps {
+  // Add any props here if needed
+}
 
-  const handleNavClick = (tabName) => {
+const Header: FC<HeaderProps> = () => {
+  // Setting Pharmacy as the default active tab
+  const [activeTab, setActiveTab] = useState<string>('Pharmacy');
+  const [showMessage, setShowMessage] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false); // State for mobile menu
+  const [location, setLocation] = useState<string>('Kansanga');
+  const [profileImage, setProfileImage] = useState<string>(profile);
+
+  const handleNavClick = (tabName: string): void => {
     setActiveTab(tabName);
     if (tabName !== 'Pharmacy') {
       setShowMessage(true);
@@ -24,20 +30,20 @@ const Header = () => {
     }
   };
 
-  const [profileImage, setProfileImage] = useState(profile);
-
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
+  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>): void => {
+    const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setProfileImage(reader.result);
+        if (typeof reader.result === 'string') {
+          setProfileImage(reader.result);
+        }
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const handleLocationChange = (e) => {
+  const handleLocationChange = (e: ChangeEvent<HTMLSelectElement>): void => {
     setLocation(e.target.value);
   };
 
@@ -72,23 +78,26 @@ const Header = () => {
             <div className="flex flex-col">
               <h1 className="text-blue-500 text-2xl font-bold">ncare.</h1>
               <AppButton
-                variant="primary"
-                className="rounded-full mt-2"
-                leftIcon={<LayoutGrid />}
+              variant="primary"
+              className="rounded-full mt-2"
+              leftIcon={<LayoutGrid />}
+              rightIcon={null}     
+              onClick={() => {}}   
               >
                 SHOP BY CATEGORIES
-              </AppButton>
-            </div>
+              </AppButton>            
+              </div>
 
             {/* Mobile Menu Toggle */}
             <AppButton
-              variant="secondary"
-              className="md:hidden p-2 bg-transparent"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            variant="secondary"
+            className="md:hidden p-2 bg-transparent"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            leftIcon={null}  
+            rightIcon={null} 
             >
               <FaBars className="text-2xl text-blue-500" />
-            </AppButton>
-
+              </AppButton>
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               {['Pharmacy', 'Doctors', 'Homecare', 'Appointments', 'Lab tests', 'Health tips'].map(
@@ -165,13 +174,14 @@ const Header = () => {
           {/* Search and Upload Rx Section */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:pl-[calc(12rem)] mt-4 md:-mt-2">
             {/* Search Container */}
-            <div className="relative flex items-center w-full md:max-w-2xl border border-blue-600 rounded-full">              <div className="relative flex items-center bg-blue-500 rounded-l-full px-3 py-2 z-10">
-              <MapPin className="text-white ml-1" size={16} />
+            <div className="relative flex items-center w-full md:max-w-2xl border border-blue-600 rounded-full">              
+              <div className="relative flex items-center bg-blue-500 rounded-l-full px-3 py-2 z-10">
+                <MapPin className="text-white ml-1" size={16} />
  
                 <select 
-                className="bg-blue-500 text-white border-none outline-none pr-6" 
-                value={location} 
-                onChange={handleLocationChange}
+                  className="bg-blue-500 text-white border-none outline-none pr-6" 
+                  value={location} 
+                  onChange={handleLocationChange}
                 >
                   <option>Kansanga</option>
                   <option>Kabuuma</option>
@@ -182,25 +192,31 @@ const Header = () => {
                 </select>
                 <div className="absolute -right-4 top-0 h-full w-6 bg-blue-500 z-0">
                   <div className="absolute top-0 right-0 h-full w-8 bg-blue-50 rounded-l-full" />
-                  </div>
-                  </div>
-                  {/*  search input */}
-                  <div className="flex items-center bg-blue-50 flex-grow rounded-r-full pl-6 pr-3 py-2 ">
-                    <input
-                    type="text"
-                    placeholder="Search medicines and health products"
-                    className="bg-blue-50 w-full outline-none border-0"
-                    />
-                    <Search className="text-blue-500 ml-2" size={18} />
-                    </div>
-                    </div>
-                    <AppButton
-                    variant="primary"
-                    className="rounded-full whitespace-nowrap w-full md:w-auto">
-                      Upload Rx
-                      </AppButton>
-                      </div>
-                      </div>
+                </div>
+              </div>
+              {/*  search input */}
+              <div className="flex items-center bg-blue-50 flex-grow rounded-r-full pl-6 pr-3 py-2 ">
+                <input
+                  type="text"
+                  placeholder="Search medicines and health products"
+                  className="bg-blue-50 w-full outline-none border-0"
+                />
+                <Search className="text-blue-500 ml-2" size={18} />
+              </div>
+            </div>
+            <AppButton
+            variant="primary"
+            className="rounded-full whitespace-nowrap w-full md:w-auto"
+            onClick={() => {}} 
+            leftIcon={null}  
+            rightIcon={null} 
+            >
+              Upload Rx
+            </AppButton>
+
+
+          </div>
+        </div>
         {/* Bottom Line */}
         <div className="h-px bg-gray-300 w-full"></div>
       </div>

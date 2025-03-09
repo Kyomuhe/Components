@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 //importing icons form lucid react
 import { Twitter, Facebook, Instagram, Linkedin, MailOpen, Play } from 'lucide-react';
-import AppButton from '../components/AppButton';
+import AppButton from './AppButton';
 
+// Define the component props interface (empty for now)
+interface FooterProps {}
 
-const Footer = () => {
+const Footer: FC<FooterProps> = () => {
   return (
-    <footer className=" bg-custom-blue text-white">
+    <footer className="bg-custom-blue text-white">
       {/* Subscription Section */}
       <div className="bg-blue-200 p-8 w-full">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-x-7">
@@ -22,8 +24,12 @@ const Footer = () => {
               className="p-2 border border-blue-600 rounded-lg bg-white w-full md:w-auto"
             />
             <AppButton
-            variant="primary"
-            className="rounded-full whitespace-nowrap w-full md:w-auto">
+              variant="primary"
+              className="rounded-full whitespace-nowrap w-full md:w-auto"
+              onClick={() => {}}
+              leftIcon={null}
+              rightIcon={null}
+            >
               Subscribe
             </AppButton>
           </div>
@@ -41,11 +47,11 @@ const Footer = () => {
                 support to empower your wellness journey anytime, anywhere, with care you can trust.
               </p>
               <div className="flex space-x-4">
-              <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:bg-gray-800">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-gray-800">
-                <Facebook size={24} className="text-blue-500" />
+                <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:bg-gray-800">
+                  <Twitter size={20} />
+                </a>
+                <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-gray-800">
+                  <Facebook size={24} className="text-blue-500" />
                 </a>
                 <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:bg-gray-800">
                   <Instagram size={24} />
@@ -56,11 +62,9 @@ const Footer = () => {
                 {/* used a custom icon because the tik tok icon is not available in lucid */}
                 <a href="#" className="flex items-center justify-center w-12 h-10 rounded-full bg-black text-white hover:bg-gray-800">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                   </svg>
-                  </a>
-
-
+                </a>
               </div>
             </div>
 
@@ -104,29 +108,28 @@ const Footer = () => {
               </ul>
             </div>
 
-
-      {/* Download App */}
-      <div>
-        <h3 className="font-bold text-lg mb-4">Download App</h3>
-        <div className='space-y-4'>
-          <ul className="space-y-4">
-            <li><a href="#" className="hover:text-gray-300">Submit Feedback</a></li>
-            <li><a href="#" className="hover:text-gray-300">Newsletter Signup</a></li>
-          </ul>
-          {/* used a custom icon because the apple icon is not available in the lucid react icons*/}
-          <button className="bg-white text-black py-2 px-4 rounded-full flex items-center justify-center space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="none">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.4-1.09-.41-2.09-.43-3.23 0-1.44.56-2.45.38-3.34-.41-2.02-1.79-3.55-6.34-1.48-10.23 1.03-1.88 2.68-2.97 4.5-3.01 1.41-.07 2.67.8 3.5.84 1.14.05 2.31-.88 3.94-.75 1.51.14 2.8.93 3.64 2.25-3.13 1.7-2.63 6.12.4 7.37-.87 1.83-2 3.63-3.85 3.54zM12.03 7.34c-.24-1.9 1.48-3.58 3.18-3.81.27 2.29-1.49 3.8-3.18 3.81z"/>
-            </svg>
-            <span>Download on the App Store</span>
-          </button>
-          <button className="bg-white text-black py-2 px-4 rounded-full flex items-center justify-center space-x-2">
-            <Play size={24} />
-          <span>Get it on Google Play</span>
-          </button>
-        </div>
-      </div>
-      </div>
+            {/* Download App */}
+            <div>
+              <h3 className="font-bold text-lg mb-4">Download App</h3>
+              <div className='space-y-4'>
+                <ul className="space-y-4">
+                  <li><a href="#" className="hover:text-gray-300">Submit Feedback</a></li>
+                  <li><a href="#" className="hover:text-gray-300">Newsletter Signup</a></li>
+                </ul>
+                {/* used a custom icon because the apple icon is not available in the lucid react icons*/}
+                <button className="bg-white text-black py-2 px-4 rounded-full flex items-center justify-center space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="none">
+                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.4-1.09-.41-2.09-.43-3.23 0-1.44.56-2.45.38-3.34-.41-2.02-1.79-3.55-6.34-1.48-10.23 1.03-1.88 2.68-2.97 4.5-3.01 1.41-.07 2.67.8 3.5.84 1.14.05 2.31-.88 3.94-.75 1.51.14 2.8.93 3.64 2.25-3.13 1.7-2.63 6.12.4 7.37-.87 1.83-2 3.63-3.85 3.54zM12.03 7.34c-.24-1.9 1.48-3.58 3.18-3.81.27 2.29-1.49 3.8-3.18 3.81z"/>
+                  </svg>
+                  <span>Download on the App Store</span>
+                </button>
+                <button className="bg-white text-black py-2 px-4 rounded-full flex items-center justify-center space-x-2">
+                  <Play size={24} />
+                  <span>Get it on Google Play</span>
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div className="border-t border-white my-6"></div>
 

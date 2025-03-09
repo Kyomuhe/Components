@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//importing images
+// importing images
 import image1 from '../images/image1.PNG';
 import image2 from '../images/image2.PNG';
 import image3 from '../images/image3.PNG';
@@ -16,28 +16,34 @@ import { FaGoogle } from 'react-icons/fa';
 import PhoneField from '../components/PhoneField';
 import AppButton from '../components/AppButton';
 import FormInput from '../components/FormInput';
-const Pharmacy = () => {
+
+// Define interface for form data
+interface FormData {
+  email: string;
+  password: string;
+}
+
+const Pharmacy: React.FC = () => {
   const images = [
     image1, image2, image3, image4, image5,
     image6, image7, image8, image9, image10
   ];
   
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     email: '',
     password: ''
   });
 
-  const [phoneNumber, setPhoneNumber] = useState('');
-
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
   
-  const [autoLogout, setAutoLogout] = useState(false);
+  const [autoLogout, setAutoLogout] = useState<boolean>(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData, 'Auto logout:', autoLogout);
@@ -116,11 +122,11 @@ const Pharmacy = () => {
               onChange={handleChange}
             />
             <PhoneField
-            value={phoneNumber}
-            onChange={setPhoneNumber}
-            defaultCountry="US"
-            required
-            label="Contact Phone"
+              value={phoneNumber}
+              onChange={setPhoneNumber}
+              defaultCountry="US"
+              required
+              label="Contact Phone"
             />
             <div className="mb-6">
               <label className="flex items-center space-x-2">

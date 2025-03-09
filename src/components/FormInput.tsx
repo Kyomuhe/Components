@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-const FormInput = ({
+interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+  label?: string;
+  placeholder?: string;
+  required?: boolean;
+  helpText?: string;
+  errorMessage?: string;
+  isValid?: boolean;
+  type?: string;
+  id?: string;
+  name?: string;
+  value?: string | number;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  className?: string;
+  rows?: number;
+  min?: number | string;
+  max?: number | string;
+}
+
+const FormInput: React.FC<FormInputProps> = ({
   label,
   placeholder,
   required = false,
@@ -46,7 +64,7 @@ const FormInput = ({
             className={inputStyles}
             rows={rows}
             required={required}
-            {...props}
+            {...props as React.TextareaHTMLAttributes<HTMLTextAreaElement>}
           />
         );
       case 'password':
@@ -58,10 +76,10 @@ const FormInput = ({
               type={showPassword ? 'text' : 'password'}
               placeholder={placeholder}
               value={value}
-              onChange={onChange}
+              onChange={onChange as React.ChangeEventHandler<HTMLInputElement>}
               className={inputStyles}
               required={required}
-              {...props}
+              {...props as React.InputHTMLAttributes<HTMLInputElement>}
             />
             <button
               type="button"
@@ -85,12 +103,12 @@ const FormInput = ({
             type={type}
             placeholder={placeholder}
             value={value}
-            onChange={onChange}
+            onChange={onChange as React.ChangeEventHandler<HTMLInputElement>}
             className={inputStyles}
             required={required}
             min={min}
             max={max}
-            {...props}
+            {...props as React.InputHTMLAttributes<HTMLInputElement>}
           />
         );
     }
