@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/footer';
 import DefaultPage from './pages/DefaultPage';
-import Pharmacy from './pages/pharmacy';
+import Pharmacy from './pages/Products';
 import Doctor from './pages/Doctors';
+import TestimonialsPage from './pages/TestimonialPage';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -23,7 +24,7 @@ const App: React.FC = () => {
       case 'Pharmacy':
         return <Pharmacy />;
       case 'Doctors':
-        return <Doctor />;
+        return <TestimonialsPage />;
       default:
         return (
           <div className="p-4 text-center text-gray-600">

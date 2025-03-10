@@ -1,6 +1,6 @@
 import React from 'react';
 import TestimonialCard from '../components/TestimonialCard';
-import profile from ../images/profile.PNG;
+import profile from '../images/profile.PNG';
 
 const TestimonialsPage = () => {
   const testimonials = [
@@ -25,7 +25,7 @@ const TestimonialsPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">What Our Customers Say</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center text-custom-blue">What Our Customers Say</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map(testimonial => (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Star }from 'lucide-react';
 
 // Product interface
 interface Product {
@@ -32,7 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
         for (let i = 1; i <= 5; i++) {
             stars.push(
                 <span key={i} className={`text-yellow-400 ${i <= rating ? 'fill-current' : 'text-gray-300'}`}>
-                    ★
+                    <Star/>
                 </span>
             );
         }

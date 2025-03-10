@@ -7,7 +7,7 @@ interface TestimonialCardProps {
   description: string;
   name: string;
   company: string;
-  imageAlt?: string; // Optional alt text, defaults to name if not provided
+  imageAlt?: string; 
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
