@@ -1,12 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 //importing icons form lucid react
 import { Twitter, Facebook, Instagram, Linkedin, MailOpen, Play } from 'lucide-react';
 import AppButton from './AppButton';
+import FormInput from '../components/FormInput';
+
 
 // Define the component props interface (empty for now)
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
+  const [email, setEmail] = useState("");
+
   return (
     <footer className="bg-custom-blue text-white">
       {/* Subscription Section */}
@@ -18,11 +22,16 @@ const Footer: FC<FooterProps> = () => {
             <p className="text-gray-600">Be aware of upcoming sales and events. Receive gifts and special offers.</p>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-2 mt-4 md:mt-0">
-            <input
+            <FormInput
               type="email"
+              name="email"
               placeholder="Email Address"
-              className="p-2 border border-blue-600 rounded-lg bg-white w-full md:w-auto"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+
+              
             />
+
             <AppButton
               variant="primary"
               className="rounded-full whitespace-nowrap w-full md:w-auto"
