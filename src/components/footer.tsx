@@ -5,7 +5,6 @@ import AppButton from './AppButton';
 import FormInput from '../components/FormInput';
 
 
-// Define the component props interface (empty for now)
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
@@ -28,7 +27,6 @@ const Footer: FC<FooterProps> = () => {
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-
               
             />
 
