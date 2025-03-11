@@ -19,9 +19,25 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   imageAlt
 }) => {
   return (
-    <div className="max-w-sm mx-auto bg-white rounded-3xl shadow-md overflow-hidden p-6 flex flex-col items-center">
-      {/* Circular image container */}
-      <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-blue-500">
+    <div 
+      className="bg-white rounded-3xl overflow-hidden p-4 md:p-6 flex flex-col"
+      style={{
+        maxWidth: '363px',
+        width: '100%',
+        height: 'auto',
+        minHeight: '364px',
+        border: '1px solid #D4D2E3'
+      }}
+    >
+      {/* Circular image container*/}
+      <div 
+        className="rounded-full overflow-hidden mb-4 md:mb-6 mx-auto"
+        style={{
+          width: '80px',
+          height: '80px',
+          borderRadius: '55px'
+        }}
+      >
         <img 
           src={imageUrl} 
           alt={imageAlt || name} 
@@ -30,15 +46,17 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </div>
       
       {/* Testimonial content */}
-      <h3 className="text-xl font-bold text-center mb-2">{quote}</h3>
+      <h3 className="text-lg md:text-xl font-bold mb-2">"{quote}"</h3>
       
-      <p className="text-gray-600 text-center mb-4">
+      <p className="text-sm md:text-base text-gray-600 mb-4">
         {description}
       </p>
       
       {/* Customer details */}
-      <p className="text-blue-600 font-semibold text-lg">{name}</p>
-      <p className="text-gray-500">{company}</p>
+      <div className="mt-auto">
+        <p className="text-blue-600 font-semibold text-base md:text-lg text-left">{name}</p>
+        <p className="text-gray-500 text-sm md:text-base text-left">{company}</p>
+      </div>
     </div>
   );
 };

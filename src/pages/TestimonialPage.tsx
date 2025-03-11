@@ -1,12 +1,14 @@
 import React from 'react';
 import TestimonialCard from '../components/TestimonialCard';
-import profile from '../images/profile.PNG';
+import profile2 from '../images/profile2.PNG';
+import profile3 from '../images/profile3.PNG';
+
 
 const TestimonialsPage = () => {
   const testimonials = [
     {
       id: '1',
-      imageUrl: profile,
+      imageUrl: profile2,
       quote: 'An amazing service',
       description: 'Getting a medical consultation with highly experienced specialists at Ncare was the best decision ever.',
       name: 'Garande Wafula',
@@ -14,7 +16,7 @@ const TestimonialsPage = () => {
     },
     {
       id: '2',
-      imageUrl: profile,
+      imageUrl: profile3,
       quote: 'Excellent customer support',
       description: 'The team was very helpful in finding the right medication for me.',
       name: 'Jane Kamau',
