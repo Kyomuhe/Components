@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FC, useEffect, useRef } from 'react';
 import { LayoutGrid, MapPin, Search, PhoneCall, Mail, ChevronDown, ShoppingCart, HelpCircle, CircleChevronRight } from 'lucide-react';
 import { FaBars, FaHeadset } from 'react-icons/fa';
+import DefaultPage from '../pages/DefaultPage';
 // importing components
 import AppButton from '../components/AppButton';
 
@@ -30,7 +31,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
 
   const handleLoginRegister = (): void => {
     // this navigates to DefaultPage when clicked
-    window.location.href = '/DefaultPage';
+    window.location.href = 'DefaultPage';
   };
 
   // Handles click outside to close the categories menu
@@ -124,7 +125,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
             
           {/* Icon and Login/Register Button */}
           <div className="hidden md:flex items-center">
-            <ShoppingCart className="text-blue-500 mx-2" size={20} />
+            <ShoppingCart className="text-black mx-2" size={20} />
             
             {/* Login/Register */}
             <AppButton
@@ -356,9 +357,9 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
             style={{
               borderTopRightRadius: '9999px',
               borderBottomRightRadius: '9999px',
-              borderTop: '2px solid #4299e1',
-              borderRight: '2px solid #4299e1',
-              borderBottom: '2px solid #4299e1',
+              borderTop: '1px solid #0085FF',
+              borderRight: '1px solid #0085FF',
+              borderBottom: '1px solid #0085FF',
             }}
           >
             <input
@@ -380,7 +381,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
           rightIcon={null}
           style={{ 
             width: '118px', 
-            height: '32px', 
+            height: '34px', 
             borderRadius: '23px', 
             borderWidth: '5px',
             maxWidth: '100%'

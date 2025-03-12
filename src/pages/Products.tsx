@@ -1,14 +1,14 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
+import CartSidebar from '../components/CartSidebar';
+import { useCart } from '../components/CartContext';
 import product1 from '../images/product1.PNG';
 import product2 from '../images/product2.PNG';
 import product3 from '../images/product3.PNG';
 
-
-
 const Products = () => {
     // Sample product data
-    const product = [
+    const products = [
         {
             id: "prod123",
             name: "Pacimal 650 Tabs",
@@ -39,25 +39,37 @@ const Products = () => {
             discount: 25,
             vendor_name: "Beteise Pharma"
         },
-
     ];
     
-    const handleAddToCart = (productId: string) => {
-        console.log(`Product ${productId} added to cart`);
-        // i will add cart logic here
-    };
+    const { 
+        addToCart, 
+        items, 
+        isOpen, 
+        closeCart, 
+        updateQuantity, 
+        removeFromCart 
+    } = useCart();
     
     return (
         <div className="p-4">
             <div className="flex flex-row flex-wrap gap-6">
-                {product.map(prod => (
+                {products.map(product => (
                     <ProductCard 
-                        key={prod.id}
-                        product={prod} 
-                        onAddToCart={handleAddToCart} 
+                        key={product.id}
+                        product={product} 
+                        onAddToCart={() => addToCart(product)} 
                     />
                 ))}
             </div>
+            
+            {/* Cart Sidebar */}
+            <CartSidebar 
+                isOpen={isOpen}
+                onClose={closeCart}
+                items={items}
+                onUpdateQuantity={updateQuantity}
+                onRemoveItem={removeFromCart}
+            />
         </div>
     );
 };

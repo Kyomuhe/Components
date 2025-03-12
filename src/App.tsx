@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/footer';
 import DefaultPage from './pages/DefaultPage';
 import Pharmacy from './pages/Products';
-import Doctor from './pages/Doctors';
+import { CartProvider } from './components/CartContext';
 import TestimonialsPage from './pages/TestimonialPage';
 
 const App: React.FC = () => {
@@ -35,6 +35,7 @@ const App: React.FC = () => {
   };
 
   return (
+    <CartProvider>
     <div className="flex flex-col min-h-screen">
       <Header onTabChange={handleTabChange} activeTab={activeTab} />
       <div className="flex-grow">
@@ -42,6 +43,7 @@ const App: React.FC = () => {
       </div>
       <Footer />
     </div>
+    </CartProvider>
   );
 };
 
