@@ -20,28 +20,32 @@ const Footer: FC<FooterProps> = () => {
             <h3 className="text-black text-xl font-bold mb-2">Choose Wisely, Subscribe Now</h3>
             <p className="text-gray-600">Be aware of upcoming sales and events. Receive gifts and special offers.</p>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-2 mt-4 md:mt-0">
-            <FormInput
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              
-            />
-
-            <AppButton
-              variant="primary"
-              className="rounded-full whitespace-nowrap w-full md:w-auto"
-              onClick={() => {}}
-              leftIcon={null}
-              rightIcon={null}
-            >
-              Subscribe
-            </AppButton>
+          <div className="flex flex-col md:flex-row items-center mt-4 md:mt-0">
+         <div className="w-full md:w-auto flex">
+          <FormInput
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="rounded-l-lg rounded-r-none border-r-0 h-12 focus:ring-0 focus:border-gray-300"
+          />
+          <AppButton
+          variant="primary"
+          className="rounded-l-none rounded-r-lg whitespace-nowrap h-12"
+          onClick={() => {}}
+          leftIcon={null}
+          rightIcon={null}
+          style={{
+            marginLeft: '-1px',
+            }}
+           >
+            Subscribe
+          </AppButton>
           </div>
         </div>
       </div>
+    </div>
       
       {/* Main Footer Content */}
       <div className="p-8">

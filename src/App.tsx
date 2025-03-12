@@ -6,6 +6,7 @@ import Pharmacy from './pages/Products';
 import { CartProvider } from './components/CartContext';
 import TestimonialsPage from './pages/TestimonialPage';
 
+
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
   

@@ -60,16 +60,16 @@ const Login: React.FC = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-          <PhoneField
-            value={phoneNumber}
-            onChange={setPhoneNumber}
-            defaultCountry="US"
-            required
-            label="Contact Phone"
-          />
-        </div>
-        <div className="mb-6">
+<div className="mb-6">
+  <PhoneField
+    value={phoneNumber}
+    onChange={setPhoneNumber}
+    defaultCountry="US"
+    required
+    label="Contact Phone"
+    className="w-full" // This ensures the field takes full width of its container
+  />
+</div>        <div className="mb-6">
           <label className="flex items-center space-x-2">
             <input
               type="checkbox"
