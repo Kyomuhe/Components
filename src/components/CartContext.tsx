@@ -57,18 +57,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const existingItem = prevItems.find(item => item.id === product.id);
       
       if (existingItem) {
-        // Increment quantity if item already exists
+        // Incrementing quantity if item already exists
         return prevItems.map(item => 
           item.id === product.id 
             ? { ...item, quantity: item.quantity + 1 } 
             : item
         );
       } else {
-        // Add new item with quantity 1
+        // Adding new item with quantity 1
         return [...prevItems, { ...product, quantity: 1 }];
       }
     });
-    openCart(); // Open cart when adding items
+    openCart(); // Opening cart when adding items
   };
 
   const removeFromCart = (productId: string) => {

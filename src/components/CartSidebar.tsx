@@ -40,13 +40,13 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
     };
   }, [isOpen, onClose]);
 
-  // Calculate total price
+  // Calculating total price
   const totalPrice = items.reduce((sum, item) => {
     const itemPrice = item.price * item.quantity;
     return sum + itemPrice;
   }, 0);
 
-  // Calculate original price (before discount)
+  // Calculating original price (before discount)
   const getOriginalPrice = (price: number, discount?: number) => {
     if (!discount) return price;
     return Math.round(price / (1 - discount / 100));
@@ -74,10 +74,10 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
         <div className="p-4 flex flex-col h-full">
           {/* Header */}
           <div className="flex justify-between items-center border-b pb-4">
-            <h2 className="text-xl font-semibold">Your Cart</h2>
+            <h2 className="text-xl font-semibold text-custom-blue">Cart Items</h2>
             <button 
               onClick={onClose}
-              className="p-1 rounded-full hover:bg-gray-100"
+              className="p-1 rounded-full hover:bg-gray-100 text-red-500"
             >
               <X size={20} />
             </button>
@@ -135,7 +135,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
                         <div className="flex items-center border rounded">
                           <button 
                             onClick={() => onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))}
-                            className="px-2 py-1 hover:bg-gray-100"
+                            className="px-2 py-1 hover:bg-gray-100 text-red-500"
                             disabled={item.quantity <= 1}
                           >
                             <Minus size={16} />
@@ -143,7 +143,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
                           <span className="px-2">{item.quantity}</span>
                           <button 
                             onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                            className="px-2 py-1 hover:bg-gray-100"
+                            className="px-2 py-1 hover:bg-gray-100 text-green-600"
                           >
                             <Plus size={16} />
                           </button>
@@ -165,11 +165,11 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
           {/* Footer */}
           <div className="border-t pt-4">
             <div className="flex justify-between items-center mb-4">
-              <span className="font-medium">Total:</span>
+              <span className="font-medium text-custom-blue">Total:</span>
               <span className="font-bold text-lg">{formatPrice(totalPrice)}</span>
             </div>
             <button 
-              className="w-full py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="w-full py-3 bg-custom-blue text-white rounded-md font-medium hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
               disabled={items.length === 0}
               onClick={() => console.log('Proceed to checkout')}
             >

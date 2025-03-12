@@ -1,7 +1,9 @@
 import React, { useState, ChangeEvent, FC, useEffect, useRef } from 'react';
-import { LayoutGrid, MapPin, Search, PhoneCall, Mail, ChevronDown, ShoppingCart, HelpCircle, CircleChevronRight } from 'lucide-react';
+import { LayoutGrid, MapPin, Search, PhoneCall, Mail, ChevronDown, HelpCircle, CircleChevronRight } from 'lucide-react';
 import { FaBars, FaHeadset } from 'react-icons/fa';
 import DefaultPage from '../pages/DefaultPage';
+import CartIcon from './CartIcon';
+
 // importing components
 import AppButton from '../components/AppButton';
 
@@ -123,34 +125,33 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
             )}
           </nav>
             
-          {/* Icon and Login/Register Button */}
-          <div className="hidden md:flex items-center">
-            <ShoppingCart className="text-black mx-2" size={20} />
-            
-            {/* Login/Register */}
-            <AppButton
-              variant="primary"
-              className="mx-2 flex items-center justify-center"
-              leftIcon={null}
-              rightIcon={null}
-              onClick={handleLoginRegister}
-              style={{ 
-                background: '#1A612C',
-                width: '144px',
-                height: '47px',
-                borderRadius: '8px',
-              }}
-            >
-              <span className="whitespace-nowrap" style={{
-                width: '104px',
-                height: '18px',
-                padding: '0 4px'
-              }}>
-                Login Register
-              </span>
-            </AppButton>
-          </div>
-
+{/* Icon and Login/Register Button */}
+<div className="hidden md:flex items-center space-x-6">
+  <CartIcon />
+  
+  {/* Login/Register */}
+  <AppButton
+    variant="primary"
+    className="flex items-center justify-center"
+    leftIcon={null}
+    rightIcon={null}
+    onClick={handleLoginRegister}
+    style={{ 
+      background: '#1A612C',
+      width: '144px',
+      height: '47px',
+      borderRadius: '8px',
+    }}
+  >
+    <span className="whitespace-nowrap" style={{
+      width: '104px',
+      height: '18px',
+      padding: '0 4px'
+    }}>
+      Login Register
+    </span>
+  </AppButton>
+</div>
           {/* Mobile Menu Toggle - Only shows on small screens */}
           <div className="md:hidden">
             <AppButton
@@ -186,7 +187,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
             )
           )}
           <div className="flex items-center gap-4 py-2">
-            <ShoppingCart className="text-blue-500" size={20} />
+            <CartIcon/>
             <AppButton
               variant="primary"
               className="rounded-md mt-2 flex items-center justify-center"
