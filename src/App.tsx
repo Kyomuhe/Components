@@ -5,6 +5,7 @@ import DefaultPage from './pages/DefaultPage';
 import Pharmacy from './pages/Products';
 import { CartProvider } from './components/CartContext';
 import TestimonialsPage from './pages/TestimonialPage';
+import DemoPage from './pages/DemoPage';
 
 
 const App: React.FC = () => {
@@ -26,6 +27,9 @@ const App: React.FC = () => {
         return <Pharmacy />;
       case 'Doctors':
         return <TestimonialsPage />;
+      case 'Homecare':
+        return <DemoPage />;
+      
       default:
         return (
           <div className="p-4 text-center text-gray-600">

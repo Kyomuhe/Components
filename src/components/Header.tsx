@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FC, useEffect, useRef } from 'react';
 import { LayoutGrid, MapPin, Search, PhoneCall, Mail, ChevronDown, HelpCircle, CircleChevronRight } from 'lucide-react';
 import { FaBars, FaHeadset } from 'react-icons/fa';
+
 import DefaultPage from '../pages/DefaultPage';
 import CartIcon from './CartIcon';
 
@@ -31,11 +32,11 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
     setIsCategoriesOpen(!isCategoriesOpen);
   };
 
-  const handleLoginRegister = (): void => {
-    // this navigates to DefaultPage when clicked
-    window.location.href = 'DefaultPage';
-  };
 
+  const handleLoginRegister = () => {
+    window.location.href ='DefaultPage';
+  };
+  
   // Handles click outside to close the categories menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -65,7 +66,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="font-sans w-full bg-white relative z-40" style={{ height: 'auto', minHeight: '225px' }} ref={headerRef}>
+    <div className="font-sans w-full bg-white relative z-40" style={{ height: 'auto', minHeight: '118px' }} ref={headerRef}>
       {/* Top Header */}
       <div className="flex justify-between items-center p-2.5 text-sm border-b border-gray-300 w-full" style={{ height: '39px' }}>
         <div className="flex items-center gap-2.5">

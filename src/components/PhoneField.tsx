@@ -121,7 +121,6 @@ const PhoneField: React.FC<PhoneFieldProps> = ({
   }, []);
 
   // Filtering countries based on search term
-  // This effect runs whenever the search term changes
   useEffect(() => {
     if (searchTerm) {
       const filtered = countryData.filter(country => 
@@ -214,9 +213,8 @@ const PhoneField: React.FC<PhoneFieldProps> = ({
         </label>
       )}
       
-      {/* Main phone input container - improved for responsive design */}
+      {/* Main phone input container */}
       <div className="relative flex w-full">
-        {/* Country selector button - adjusted for better small screen display */}
         <div className="relative country-selector" style={{ minWidth: '72px' }}>
           <button
             type="button"
@@ -237,7 +235,7 @@ const PhoneField: React.FC<PhoneFieldProps> = ({
             <ChevronDown size={14} className="ml-0 sm:ml-1" />
           </button>
           
-          {/* Country dropdown menu - repositioned for mobile */}
+          {/* Country dropdown menu for mobile */}
           {dropdownOpen && (
             <div className="absolute z-10 w-64 mt-1 bg-white border border-gray-300 rounded-md shadow-lg left-0 right-auto">
               {/* Search input for countries */}
@@ -272,7 +270,7 @@ const PhoneField: React.FC<PhoneFieldProps> = ({
           )}
         </div>
         
-        {/* Phone number input field - adjusted to take remaining width */}
+        {/* Phone number input field*/}
         <input
           type="tel"
           name={name}
@@ -291,7 +289,7 @@ const PhoneField: React.FC<PhoneFieldProps> = ({
       </div>
       
       {/* Error and helper text area */}
-      <div className="min-h-6"> {/* Fixed height container to prevent layout shifts */}
+      <div className="min-h-6"> 
         {error ? (
           <div className="mt-1 text-sm text-red-500">{error}</div>
         ) : !isValid && inputValue ? (
