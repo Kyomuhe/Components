@@ -103,27 +103,31 @@ const SideBar: React.FC = () => {
 
   return (
     <div 
-      className="w-60 h-[773px] bg-[#F9FCFF] rounded-lg flex flex-col p-4 gap-6 sticky top-4"
+      className="w-60 h-[773px] bg-[#F9FCFF] rounded-lg flex flex-col px-0 py-4 gap-6 sticky top-4"
       style={{ 
         fontFamily: 'GT Walsheim Pro, sans-serif',
       }}
     >
       {/* Rendering the first three sections */}
-      {menuSections.slice(0, 3).map((section) => (
-        <div key={section.id} className="flex flex-col gap-3">
-          {section.items.map(renderMenuItem)}
-        </div>
-      ))}
+      <div className="px-4">
+        {menuSections.slice(0, 3).map((section) => (
+          <div key={section.id} className="flex flex-col gap-3 mb-6">
+            {section.items.map(renderMenuItem)}
+          </div>
+        ))}
+      </div>
 
-      {/* Upgrade banner */}
-      <div className="w-full h-[35px] bg-custom-blue rounded flex items-center px-3 gap-3 text-white">
+      {/* Upgrade banner - full width */}
+      <div className="w-full h-[35px] bg-custom-blue flex items-center px-4 gap-3 text-white">
         <Award size={18} />
         <span className="text-[15px] font-medium">Upgrade to silver plan</span>
       </div>
 
       {/* Rendering the account section */}
-      <div className="flex flex-col gap-3">
-        {menuSections[3].items.map(renderMenuItem)}
+      <div className="px-4 mt-2">
+        <div className="flex flex-col gap-3">
+          {menuSections[3].items.map(renderMenuItem)}
+        </div>
       </div>
     </div>
   );
