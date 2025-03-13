@@ -34,7 +34,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
 
 
   const handleLoginRegister = () => {
-    window.location.href ='DefaultPage';
+    onTabChange(null); 
   };
   
   // Handles click outside to close the categories menu

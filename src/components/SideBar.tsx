@@ -19,7 +19,7 @@ import {
   HandCoins
 } from 'lucide-react';
 
-// Define the structure for menu items
+// Defining the structure for menu items
 interface MenuItem {
   id: string;
   label: string;
@@ -28,14 +28,14 @@ interface MenuItem {
   className?: string;
 }
 
-// Define the structure for menu sections
+// Defining the structure for menu sections
 interface MenuSection {
   id: string;
   items: MenuItem[];
 }
 
 const SideBar: React.FC = () => {
-  // Define the menu sections and their items
+  // Defining the menu sections and their items
   const menuSections: MenuSection[] = [
     {
       id: 'main',
@@ -87,7 +87,7 @@ const SideBar: React.FC = () => {
     },
   ];
 
-  // Render a single menu item
+  // Rendering a single menu item
   const renderMenuItem = (item: MenuItem) => (
     <a 
       key={item.id} 
@@ -108,7 +108,7 @@ const SideBar: React.FC = () => {
         fontFamily: 'GT Walsheim Pro, sans-serif',
       }}
     >
-      {/* Render first three sections */}
+      {/* Rendering the first three sections */}
       {menuSections.slice(0, 3).map((section) => (
         <div key={section.id} className="flex flex-col gap-3">
           {section.items.map(renderMenuItem)}
@@ -121,7 +121,7 @@ const SideBar: React.FC = () => {
         <span className="text-[15px] font-medium">Upgrade to silver plan</span>
       </div>
 
-      {/* Render account section */}
+      {/* Rendering the account section */}
       <div className="flex flex-col gap-3">
         {menuSections[3].items.map(renderMenuItem)}
       </div>
