@@ -9,8 +9,6 @@ import Joint from "../images/Joint.PNG";
 import Derma from "../images/Derma.PNG";
 import Diabetes from "../images/Diabetes.PNG";
 import Count from "../images/Count.PNG";
-//importing App button component
-import AppButton from "../components/AppButton";
 
 const Care: React.FC = () => {
     const careItems = [
@@ -26,7 +24,6 @@ const Care: React.FC = () => {
 
     return (
         <div className="relative w-full px-4 md:px-8 lg:px-16">
-            {/* Responsive grid for care items */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-4">
                 {careItems.map((item, index) => (
                     <div 
@@ -51,7 +48,7 @@ const Care: React.FC = () => {
                 ))}
             </div>
 
-            {/* Blood Count Component - Left aligned on larger screens */}
+            {/* CBC component*/}
             <div className="flex justify-center md:justify-start mt-12 mb-6">
                 <div 
                     className="flex items-center w-full max-w-[328px] h-auto p-4"
