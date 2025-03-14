@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Components/static/css/main.c77bbfe3.css",
-    "main.js": "/Components/static/js/main.2f43b5d2.js",
+    "main.css": "/Components/static/css/main.5248afe5.css",
+    "main.js": "/Components/static/js/main.65dab5d2.js",
     "static/js/453.fc9f260b.chunk.js": "/Components/static/js/453.fc9f260b.chunk.js",
     "static/media/image2.PNG": "/Components/static/media/image2.e9359ad51037c994d750.PNG",
     "static/media/profile3.PNG": "/Components/static/media/profile3.0bb6cf1c3e1f4620741c.PNG",
@@ -10,21 +10,30 @@
     "static/media/product3.PNG": "/Components/static/media/product3.87a547bf6bff36de87a9.PNG",
     "static/media/image4.PNG": "/Components/static/media/image4.9128692c082713d62907.PNG",
     "static/media/image5.PNG": "/Components/static/media/image5.e0f00c359d8f7159437d.PNG",
+    "static/media/Stomach.PNG": "/Components/static/media/Stomach.df6ec70d84e0b71aa211.PNG",
     "static/media/image6.jpeg": "/Components/static/media/image6.5dcb40c1daf61fff463a.jpeg",
     "static/media/image10.PNG": "/Components/static/media/image10.eb7dfae56d9d2200226d.PNG",
+    "static/media/Kidney.PNG": "/Components/static/media/Kidney.04fc023ffda891b94948.PNG",
+    "static/media/Heart.PNG": "/Components/static/media/Heart.cf0faa563952635e0675.PNG",
+    "static/media/Diabetes.PNG": "/Components/static/media/Diabetes.7a78b52a801b108c7e1d.PNG",
     "static/media/profile2.PNG": "/Components/static/media/profile2.18f0ea301ae76e137104.PNG",
+    "static/media/Skin.PNG": "/Components/static/media/Skin.547a0c4fe96130fc92f9.PNG",
     "static/media/image8.PNG": "/Components/static/media/image8.bf9652ce7dbea77ba275.PNG",
+    "static/media/Pain.PNG": "/Components/static/media/Pain.db118decfdbbbba4badd.PNG",
     "static/media/product2.PNG": "/Components/static/media/product2.bd6e1e2c8e133bd78e54.PNG",
     "static/media/image7.PNG": "/Components/static/media/image7.aeedb99580c7680bcc60.PNG",
+    "static/media/Derma.PNG": "/Components/static/media/Derma.eb1b944d4bacef0b8732.PNG",
     "static/media/image1.PNG": "/Components/static/media/image1.0d7625cb2e05d365d482.PNG",
+    "static/media/Joint.PNG": "/Components/static/media/Joint.d47cbb311ee99ea9ebed.PNG",
     "static/media/product1.PNG": "/Components/static/media/product1.6fe0b56fc5881e71800b.PNG",
+    "static/media/Count.PNG": "/Components/static/media/Count.95c10b7ee571235b5a9b.PNG",
     "index.html": "/Components/index.html",
-    "main.c77bbfe3.css.map": "/Components/static/css/main.c77bbfe3.css.map",
-    "main.2f43b5d2.js.map": "/Components/static/js/main.2f43b5d2.js.map",
+    "main.5248afe5.css.map": "/Components/static/css/main.5248afe5.css.map",
+    "main.65dab5d2.js.map": "/Components/static/js/main.65dab5d2.js.map",
     "453.fc9f260b.chunk.js.map": "/Components/static/js/453.fc9f260b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c77bbfe3.css",
-    "static/js/main.2f43b5d2.js"
+    "static/css/main.5248afe5.css",
+    "static/js/main.65dab5d2.js"
   ]
 }
