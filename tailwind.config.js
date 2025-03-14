@@ -19,6 +19,8 @@ module.exports = {
 		  'cyan-500':'var(--cyan-500)',
 		  'cyan-600': 'var(--cyan-600)',
 		  'gray': 'var(--gray)',
+		  'grey': 'var(--grey)',
+
 
 
 

@@ -36,7 +36,7 @@ const Care: React.FC = () => {
                             className="rounded-lg w-full max-w-[127px] h-auto aspect-square object-cover"
                         />
                         <p 
-                            className="text-center mt-2 text-sm sm:text-base font-normal break-words w-full"
+                            className="text-center mt-2 text-sm sm:text-base font-normal break-words w-full text-grey"
                             style={{ 
                                 fontFamily: "GT Walsheim Pro, sans-serif",
                                 lineHeight: "110%"
@@ -100,7 +100,7 @@ const Care: React.FC = () => {
                             (CBC)
                         </p>
                         <p 
-                            className="font-normal text-base mt-1"
+                            className="font-normal text-base mt-2 text-grey"
                             style={{
                                 fontFamily: "GT Walsheim Pro, sans-serif",
                                 lineHeight: "100%"

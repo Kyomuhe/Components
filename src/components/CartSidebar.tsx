@@ -104,19 +104,19 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
                     
                     {/* Product details */}
                     <div className="ml-4 flex-grow">
-                      <h3 className="font-medium">{item.name}</h3>
+                      <h3 className="font-bold">{item.name}</h3>
                       
                       {/* Price section */}
                       <div className="flex items-start mt-1">
                         <div className="flex flex-col">
                           {/* Current price */}
-                          <span className="font-bold text-primary">
+                          <span className="font-medium text-primary">
                             {formatPrice(item.price)}
                           </span>
                           
                           {/* Original price if discounted */}
                           {item.discount && (
-                            <span className="text-sm text-gray-500 line-through">
+                            <span className="text-sm text-grey line-through">
                               {formatPrice(getOriginalPrice(item.price, item.discount))}
                             </span>
                           )}
