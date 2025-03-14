@@ -2,7 +2,6 @@ import React, { useState, ChangeEvent, FC, useEffect, useRef } from 'react';
 import { LayoutGrid, MapPin, Search, PhoneCall, Mail, ChevronDown, HelpCircle, CircleChevronRight } from 'lucide-react';
 import { FaBars, FaHeadset } from 'react-icons/fa';
 
-import DefaultPage from '../pages/DefaultPage';
 import CartIcon from './CartIcon';
 
 // importing components

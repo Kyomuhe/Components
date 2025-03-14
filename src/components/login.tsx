@@ -67,7 +67,7 @@ const Login: React.FC = () => {
     defaultCountry="US"
     required
     label="Contact Phone"
-    className="w-full" // This ensures the field takes full width of its container
+    className="w-full" 
   />
 </div>        <div className="mb-6">
           <label className="flex items-center space-x-2">
