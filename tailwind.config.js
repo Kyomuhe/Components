@@ -20,6 +20,8 @@ module.exports = {
 		  'cyan-600': 'var(--cyan-600)',
 		  'gray': 'var(--gray)',
 		  'grey': 'var(--grey)',
+		  'back': 'var(--back)',
+
 
 
 

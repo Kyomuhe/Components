@@ -1,10 +1,17 @@
 import React from 'react';
-import LeftSidebar from '../components/SideBar';
+import SideBar from '../components/SideBar';
 
-const DemoPage: React.FC = () => {
+interface DemoPageProps {
+  onTabChange: (tabName: string) => void;
+  activeTab: string | null;
+}
+
+const DemoPage: React.FC<DemoPageProps> = ({ onTabChange, activeTab }) => {
   return (
     <div className="flex min-h-screen bg-gray-100 p-4">
-      <LeftSidebar />
+      <SideBar onTabChange={onTabChange} activeTab={activeTab} />
+      <div className="ml-4 flex-grow">
+      </div>
     </div>
   );
 };

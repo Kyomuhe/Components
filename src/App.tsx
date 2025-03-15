@@ -7,17 +7,28 @@ import { CartProvider } from './components/CartContext';
 import TestimonialsPage from './pages/TestimonialPage';
 import DemoPage from './pages/DemoPage';
 import Care from './pages/Care';
-
+import SideBar from './components/SideBar';
+import Profile from './components/Profile';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
   
-  // This function will receive the selected tab from Header
+  // receives the selected tab from Header or SideBar
   const handleTabChange = (tabName: string | null) => {
     setActiveTab(tabName);
+    
+    // switching to a tab that requires the sidebar
+    if (['Profile', 'Overview', 'appointments', 'Notifications', 'Treat now, pay later',
+         'Cart', 'Payments', 'Health savings', 'Insurance', 'Medications',
+         'Messages', 'Health Records', 'Dependents', 'Lab Tests', 'Settings'].includes(tabName || '')) {
+      setShowSidebar(true);
+    } else {
+      setShowSidebar(false);
+    }
   };
   
-  // Function to render the appropriate component based on the selected tab
+  // Function rendering the appropriate component based on the selected tab
   const renderMainContent = () => {
     if (!activeTab) {
       return <DefaultPage />;
@@ -29,10 +40,11 @@ const App: React.FC = () => {
       case 'Doctors':
         return <TestimonialsPage />;
       case 'Homecare':
-        return <DemoPage />;
+        return <DemoPage onTabChange={handleTabChange} activeTab={activeTab} />;
       case 'Appointments':
-        return <Care/>;
-      
+        return <Care />;
+      case 'Profile':
+        return <Profile />;
       default:
         return (
           <div className="p-4 text-center text-gray-600">
@@ -44,13 +56,20 @@ const App: React.FC = () => {
 
   return (
     <CartProvider>
-    <div className="flex flex-col min-h-screen">
-      <Header onTabChange={handleTabChange} activeTab={activeTab} />
-      <div className="flex-grow">
-        {renderMainContent()}
+      <div className="flex flex-col min-h-screen">
+        <Header onTabChange={handleTabChange} activeTab={activeTab} />
+        <div className="flex-grow flex">
+          {showSidebar && (
+            <div className="p-4">
+              <SideBar onTabChange={handleTabChange} activeTab={activeTab} />
+            </div>
+          )}
+          <div className={`flex-grow ${showSidebar ? 'ml-4' : ''}`}>
+            {renderMainContent()}
+          </div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
     </CartProvider>
   );
 };
