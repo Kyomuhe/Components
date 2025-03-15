@@ -19,30 +19,31 @@ const Profile: React.FC = () => {
         <span className="font-[GT_Walsheim_Pro] font-medium text-blue-500">51% complete</span>
       </div>
 
-      {/* Profile image area */}
-      <div className="absolute w-[100px] h-[100px] top-[67px] left-[108px] rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-        {/* Progress circle - 51% blue, rest gray */}
-        <div className="absolute inset-0">
-          <svg viewBox="0 0 100 100" className="absolute inset-0">
-            <circle cx="50" cy="50" r="48" fill="transparent" stroke="#E0E0E0" strokeWidth="4" />
-            <circle 
-              cx="50" 
-              cy="50" 
-              r="48" 
-              fill="transparent" 
-              stroke="#0085FF" 
-              strokeWidth="4" 
-              strokeDasharray="301.6" 
-              strokeDashoffset="147.8" 
-              transform="rotate(-90 50 50)" 
-            />
-          </svg>
-        </div>
-        {/*profile image */}
-        <div className="w-[72px] h-[72px] rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
-          <img src={profile3} alt="Profile" className="w-full h-full object-cover" />
-        </div>
-      </div>
+{/* Profile image area */}
+<div className="absolute w-[100px] h-[100px] top-[67px] left-[108px] rounded-full flex items-center justify-center overflow-hidden">
+  {/* Progress circle - 51% blue, rest gray */}
+  <div className="absolute inset-0">
+    <svg viewBox="0 0 100 100" className="absolute inset-0">
+      <circle cx="50" cy="50" r="48" fill="transparent" stroke="#E0E0E0" strokeWidth="4" />
+      <circle 
+        cx="50" 
+        cy="50" 
+        r="48"
+        fill="transparent" 
+        stroke="#0085FF" 
+        strokeWidth="4" 
+        strokeDasharray="301.6" 
+        strokeDashoffset="147.8" 
+        transform="rotate(-90 50 50)" 
+      />
+    </svg>
+  </div>
+  
+    {/* Profile image */}
+    <div className="w-[72px] h-[72px] rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+      <img src={profile3} alt="Profile" className="w-full h-full object-cover" />
+    </div>
+  </div>
 
       {/* Name greeting */}
       <div className="absolute w-[208px] h-[19px] top-[191px] left-[44px] font-[GT_Walsheim_Pro] font-medium text-[17px] text-center capitalize">
