@@ -7,6 +7,16 @@ import product1 from '../images/product1.PNG';
 import product2 from '../images/product2.PNG';
 import product3 from '../images/product3.PNG';
 import product4 from '../images/product4.PNG';
+import product41 from '../images/product41.PNG';
+import product42 from '../images/product42.PNG';
+import product31 from '../images/product31.PNG';
+import product32 from '../images/product32.PNG';
+import product21 from '../images/product21.PNG';
+import product22 from '../images/product22.PNG';
+import product11 from '../images/product11.PNG';
+import product12 from '../images/product12.PNG';
+
+
 
 const Products = () => {
     // State to track selected product for detail view
@@ -18,6 +28,8 @@ const Products = () => {
             id: "prod123",
             name: "Pacimal 650 Tabs",
             image_url: product1,
+            image_url1: product11,
+            image_url2: product12,
             description: "Pain relief medication",
             price: 26000,
             rating: 5,
@@ -33,6 +45,9 @@ const Products = () => {
             id: "prod124",
             name: "Calma Tabs",
             image_url: product2,
+            image_url1: product21,
+            image_url2: product22,
+
             description: "Pain relief medication",
             price: 70000,
             rating: 3,
@@ -48,6 +63,9 @@ const Products = () => {
             id: "prod126",
             name: "Adrenaline",
             image_url: product3,
+            image_url1: product31,
+            image_url2: product32,
+
             description: "Pain relief medication",
             price: 100000,
             rating: 2,
@@ -63,6 +81,9 @@ const Products = () => {
             id: "prod127",
             name: "Baidyanath Sitopaladi Churna, 60 gm",
             image_url: product4,
+            image_url1: product41,
+            image_url2: product42,
+
             description: "Pain relief medication",
             price: 26000,
             rating: 4,
