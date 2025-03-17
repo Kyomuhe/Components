@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
+import ProductDetail from '../components/ProductDetail';
 import CartSidebar from '../components/CartSidebar';
 import { useCart } from '../components/CartContext';
 import product1 from '../images/product1.PNG';
 import product2 from '../images/product2.PNG';
 import product3 from '../images/product3.PNG';
+import product4 from '../images/product4.PNG';
 
 const Products = () => {
-    // Sample product data
+    // State to track selected product for detail view
+    const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+    
+    // Sample product data with additional fields
     const products = [
         {
             id: "prod123",
@@ -17,7 +22,12 @@ const Products = () => {
             price: 26000,
             rating: 5,
             discount: 16,
-            vendor_name: "Abacus Pharma"
+            vendor_name: "Abacus Pharma",
+            composition: "Pregablin 65, Pregablin 80, Ciprofloxasin 10, Profloxamarin 70",
+            expiry: "26 Feb 2029",
+            consumeType: "Oral",
+            returnable: false,
+            soldCount: 262
         },
         {
             id: "prod124",
@@ -27,7 +37,12 @@ const Products = () => {
             price: 70000,
             rating: 3,
             discount: 25,
-            vendor_name: "kay Pharma"
+            vendor_name: "Kay Pharma",
+            composition: "Ciprofloxasin 32, Profloxamarin 45",
+            expiry: "15 Mar 2028",
+            consumeType: "Oral",
+            returnable: false,
+            soldCount: 187
         },
         {
             id: "prod126",
@@ -37,7 +52,27 @@ const Products = () => {
             price: 100000,
             rating: 2,
             discount: 25,
-            vendor_name: "Beteise Pharma"
+            vendor_name: "Beteise Pharma",
+            composition: "Adrenaline 2mg, Epinephrine 5mg",
+            expiry: "30 Apr 2027",
+            consumeType: "Injectable",
+            returnable: false,
+            soldCount: 93
+        },
+        {
+            id: "prod127",
+            name: "Baidyanath Sitopaladi Churna, 60 gm",
+            image_url: product4,
+            description: "Pain relief medication",
+            price: 26000,
+            rating: 4,
+            discount: 16,
+            vendor_name: "Abacus Pharmaceuticals pvt ltd",
+            composition: "Sitopaladi, Churna, Herbal extract",
+            expiry: "11 Jan 2028",
+            consumeType: "Oral",
+            returnable: false,
+            soldCount: 315
         },
     ];
     
@@ -50,6 +85,43 @@ const Products = () => {
         removeFromCart 
     } = useCart();
     
+    // Handle product selection
+    const handleProductSelect = (productId: string) => {
+        setSelectedProductId(productId);
+    };
+    
+    // Handle back to products list
+    const handleBackToProducts = () => {
+        setSelectedProductId(null);
+    };
+    
+    // Get the selected product if there is one
+    const selectedProduct = selectedProductId 
+        ? products.find(p => p.id === selectedProductId) 
+        : null;
+    
+    // Show product detail if a product is selected
+    if (selectedProduct) {
+        return (
+            <div className="p-4">
+                <ProductDetail 
+                    product={selectedProduct} 
+                    onBack={handleBackToProducts} 
+                />
+                
+                {/* Cart Sidebar */}
+                <CartSidebar 
+                    isOpen={isOpen}
+                    onClose={closeCart}
+                    items={items}
+                    onUpdateQuantity={updateQuantity}
+                    onRemoveItem={removeFromCart}
+                />
+            </div>
+        );
+    }
+    
+    // Otherwise show the product list
     return (
         <div className="p-4">
             <div className="flex flex-row flex-wrap gap-6">
@@ -57,7 +129,8 @@ const Products = () => {
                     <ProductCard 
                         key={product.id}
                         product={product} 
-                        onAddToCart={() => addToCart(product)} 
+                        onAddToCart={() => addToCart(product)}
+                        onProductSelect={handleProductSelect}
                     />
                 ))}
             </div>

@@ -11,16 +11,34 @@ interface Product {
     rating: number;
     discount: number;
     vendor_name: string;
+    // Optional fields that might be available in the detail view
+    composition?: string;
+    expiry?: string;
+    consumeType?: string;
+    returnable?: boolean;
+    soldCount?: number;
 }
 
 interface ProductCardProps {
     product: Product;
     onAddToCart: (productId: string) => void;
+    onProductSelect: (productId: string) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
-    // Calculating the original price based on current price and discount
+const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onProductSelect }) => {
     const originalPrice = product.price / (1 - product.discount / 100);
+
+    // Handle image click to show product details
+    const handleImageClick = () => {
+        onProductSelect(product.id);
+    };
+    
+    // Handle add to cart
+    const handleAddToCart = (e: React.MouseEvent) => {
+        // Stop event propagation to prevent navigation when clicking the button
+        e.stopPropagation();
+        onAddToCart(product.id);
+    };
     
     const formatCurrency = (amount: number) => {
         return `Ugx ${amount.toLocaleString()}`;
@@ -63,10 +81,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
                     </div>
                 )}
                 
-                {/* Product image */}
+                {/* Product image - now clickable */}
                 <img 
                     src={product.image_url} 
                     alt={product.name}
+                    onClick={handleImageClick}
+                    className="object-contain cursor-pointer"
                     style={{
                         width: '102px',
                         height: '100px',
@@ -74,26 +94,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
                         left: '40px',
                         objectFit: 'cover',
                         position: 'absolute'
-                    }}
+
+
+                    }
+
+                    }
                 />
             </div>
             
-            {/* Product details */}
-            <div className="p-2 relative">
-                {/* Product name*/}
-                <h3
-                    className="text-gray-800 mb-1 whitespace-nowrap overflow-hidden text-ellipsis font-bold"
-                    style={{
-                        width: '100%',
-                        height: '20px',
-                        position: 'relative',
-                        fontSize: '16px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                    }}
-                >
-                    {product.name}
-                </h3>
+            <div className="p-2">
+                {/* Product Name */}
+                <h3 className="font-medium text-sm mb-1 truncate">{product.name}</h3>
+                
                 
                 {/* Vendor name and stars*/}
                 <div className="flex items-center justify-between mb-2 mt-2">
