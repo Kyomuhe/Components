@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/Components/static/css/main.da0980ab.css",
-    "main.js": "/Components/static/js/main.f81386c2.js",
+    "main.css": "/Components/static/css/main.50b0644d.css",
+    "main.js": "/Components/static/js/main.55c7d250.js",
     "static/js/453.fc9f260b.chunk.js": "/Components/static/js/453.fc9f260b.chunk.js",
+    "static/media/product12.PNG": "/Components/static/media/product12.cf58a5f46ae0a1f1f560.PNG",
     "static/media/image2.PNG": "/Components/static/media/image2.e9359ad51037c994d750.PNG",
     "static/media/profile3.PNG": "/Components/static/media/profile3.0bb6cf1c3e1f4620741c.PNG",
     "static/media/image9.PNG": "/Components/static/media/image9.c53338aa79d5bcbf4d02.PNG",
     "static/media/image3.PNG": "/Components/static/media/image3.d2e6b15d8a5e4f9af8b2.PNG",
+    "static/media/product11.PNG": "/Components/static/media/product11.d4bb6c3a8d1377f7c647.PNG",
     "static/media/product3.PNG": "/Components/static/media/product3.87a547bf6bff36de87a9.PNG",
     "static/media/image4.PNG": "/Components/static/media/image4.9128692c082713d62907.PNG",
     "static/media/image5.PNG": "/Components/static/media/image5.e0f00c359d8f7159437d.PNG",
@@ -17,24 +19,30 @@
     "static/media/Heart.PNG": "/Components/static/media/Heart.cf0faa563952635e0675.PNG",
     "static/media/Diabetes.PNG": "/Components/static/media/Diabetes.7a78b52a801b108c7e1d.PNG",
     "static/media/profile2.PNG": "/Components/static/media/profile2.18f0ea301ae76e137104.PNG",
+    "static/media/product42.PNG": "/Components/static/media/product42.21b23bef81267e7d86ec.PNG",
     "static/media/Skin.PNG": "/Components/static/media/Skin.547a0c4fe96130fc92f9.PNG",
     "static/media/image8.PNG": "/Components/static/media/image8.bf9652ce7dbea77ba275.PNG",
     "static/media/Pain.PNG": "/Components/static/media/Pain.db118decfdbbbba4badd.PNG",
-    "static/media/product4.PNG": "/Components/static/media/product4.2f2d46244ac90f7a5da8.PNG",
-    "static/media/product2.PNG": "/Components/static/media/product2.bd6e1e2c8e133bd78e54.PNG",
+    "static/media/product2.PNG": "/Components/static/media/product2.423ddfb150d37aa3f6a1.PNG",
     "static/media/image7.PNG": "/Components/static/media/image7.aeedb99580c7680bcc60.PNG",
     "static/media/Derma.PNG": "/Components/static/media/Derma.eb1b944d4bacef0b8732.PNG",
     "static/media/image1.PNG": "/Components/static/media/image1.0d7625cb2e05d365d482.PNG",
     "static/media/Joint.PNG": "/Components/static/media/Joint.d47cbb311ee99ea9ebed.PNG",
+    "static/media/product4.PNG": "/Components/static/media/product4.45b6de61c922352f2049.PNG",
+    "static/media/product41.PNG": "/Components/static/media/product41.bb45c8419f1a1d10c750.PNG",
     "static/media/product1.PNG": "/Components/static/media/product1.6fe0b56fc5881e71800b.PNG",
+    "static/media/product32.PNG": "/Components/static/media/product32.dd5f9ff64ad9014923e9.PNG",
+    "static/media/product21.PNG": "/Components/static/media/product21.ba46df746aa9f21fec1c.PNG",
+    "static/media/product31.PNG": "/Components/static/media/product31.32ee7121596966f55650.PNG",
+    "static/media/product22.PNG": "/Components/static/media/product22.80b1061282fcceb5540f.PNG",
     "static/media/Count.PNG": "/Components/static/media/Count.95c10b7ee571235b5a9b.PNG",
     "index.html": "/Components/index.html",
-    "main.da0980ab.css.map": "/Components/static/css/main.da0980ab.css.map",
-    "main.f81386c2.js.map": "/Components/static/js/main.f81386c2.js.map",
+    "main.50b0644d.css.map": "/Components/static/css/main.50b0644d.css.map",
+    "main.55c7d250.js.map": "/Components/static/js/main.55c7d250.js.map",
     "453.fc9f260b.chunk.js.map": "/Components/static/js/453.fc9f260b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da0980ab.css",
-    "static/js/main.f81386c2.js"
+    "static/css/main.50b0644d.css",
+    "static/js/main.55c7d250.js"
   ]
 }
