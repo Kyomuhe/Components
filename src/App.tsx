@@ -9,6 +9,7 @@ import DemoPage from './pages/DemoPage';
 import Care from './pages/Care';
 import SideBar from './components/SideBar';
 import Profile from './components/Profile';
+import SwipperPage from './pages/SwipperPage';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -43,6 +44,9 @@ const App: React.FC = () => {
         return <DemoPage onTabChange={handleTabChange} activeTab={activeTab} />;
       case 'Appointments':
         return <Care />;
+      case 'Lab tests':
+        return <SwipperPage />;
+    
       case 'Profile':
         return <Profile />;
       default:
