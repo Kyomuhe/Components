@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/Components/static/css/main.50b0644d.css",
-    "main.js": "/Components/static/js/main.55c7d250.js",
+    "main.css": "/Components/static/css/main.10dafa07.css",
+    "main.js": "/Components/static/js/main.a6ae76d8.js",
     "static/js/453.fc9f260b.chunk.js": "/Components/static/js/453.fc9f260b.chunk.js",
     "static/media/product12.PNG": "/Components/static/media/product12.cf58a5f46ae0a1f1f560.PNG",
+    "static/media/back1.PNG": "/Components/static/media/back1.e026b06d1fbb7a5f244f.PNG",
     "static/media/image2.PNG": "/Components/static/media/image2.e9359ad51037c994d750.PNG",
+    "static/media/back3.PNG": "/Components/static/media/back3.6389eec947b25047b5b1.PNG",
     "static/media/profile3.PNG": "/Components/static/media/profile3.0bb6cf1c3e1f4620741c.PNG",
     "static/media/image9.PNG": "/Components/static/media/image9.c53338aa79d5bcbf4d02.PNG",
     "static/media/image3.PNG": "/Components/static/media/image3.d2e6b15d8a5e4f9af8b2.PNG",
@@ -19,6 +21,7 @@
     "static/media/Heart.PNG": "/Components/static/media/Heart.cf0faa563952635e0675.PNG",
     "static/media/Diabetes.PNG": "/Components/static/media/Diabetes.7a78b52a801b108c7e1d.PNG",
     "static/media/profile2.PNG": "/Components/static/media/profile2.18f0ea301ae76e137104.PNG",
+    "static/media/back2.PNG": "/Components/static/media/back2.ed41058e080da9deb4cc.PNG",
     "static/media/product42.PNG": "/Components/static/media/product42.21b23bef81267e7d86ec.PNG",
     "static/media/Skin.PNG": "/Components/static/media/Skin.547a0c4fe96130fc92f9.PNG",
     "static/media/image8.PNG": "/Components/static/media/image8.bf9652ce7dbea77ba275.PNG",
@@ -37,12 +40,12 @@
     "static/media/product22.PNG": "/Components/static/media/product22.80b1061282fcceb5540f.PNG",
     "static/media/Count.PNG": "/Components/static/media/Count.95c10b7ee571235b5a9b.PNG",
     "index.html": "/Components/index.html",
-    "main.50b0644d.css.map": "/Components/static/css/main.50b0644d.css.map",
-    "main.55c7d250.js.map": "/Components/static/js/main.55c7d250.js.map",
+    "main.10dafa07.css.map": "/Components/static/css/main.10dafa07.css.map",
+    "main.a6ae76d8.js.map": "/Components/static/js/main.a6ae76d8.js.map",
     "453.fc9f260b.chunk.js.map": "/Components/static/js/453.fc9f260b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.50b0644d.css",
-    "static/js/main.55c7d250.js"
+    "static/css/main.10dafa07.css",
+    "static/js/main.a6ae76d8.js"
   ]
 }
