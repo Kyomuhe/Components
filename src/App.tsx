@@ -10,6 +10,7 @@ import Care from './pages/Care';
 import SideBar from './components/SideBar';
 import Profile from './components/Profile';
 import SwipperPage from './pages/SwipperPage';
+import Payments from './pages/Payments';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -49,6 +50,9 @@ const App: React.FC = () => {
     
       case 'Profile':
         return <Profile />;
+      case 'Payments':
+        return <Payments />;
+      
       default:
         return (
           <div className="p-4 text-center text-gray-600">

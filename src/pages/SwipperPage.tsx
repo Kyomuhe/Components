@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import Swiper, { SwiperItem } from "../components/Swiper";
-import back1 from "../images/back1.PNG";
-import back2 from "../images/back2.PNG";
-import back3 from "../images/back3.PNG";
-import { PhoneIncoming } from "lucide-react";
+import Dyamic from "../images/Dyamic.png";
 
 const SwipperPage: React.FC = () => {
   // Sample data
@@ -14,21 +11,21 @@ const SwipperPage: React.FC = () => {
       description: "We are dedicated to providing exceptional medical care to our patients and their families. Our experienced team of medical professionals, cutting-edge technology, and compassionate approach make us a leader in the healthcare industry",
       buttonText: "Get Ncare App",
       actionLink: "https://example.com/app1",
-      imageUrl: back1
+      imageUrl: Dyamic
     },
     {
       title: "Medical Services",
       description: "Access top quality medical services from the comfort of your home. Our professionals are available 24/7 to address your healthcare needs.",
       buttonText: "Learn More",
       actionLink: "https://example.com/app2",
-      imageUrl: back2
+      imageUrl: Dyamic
     },
     {
       title: "Patient First",
       description: "Our patient-first approach ensures that you receive personalized care tailored to your specific needs and circumstances.",
       buttonText: "Book Appointment",
       actionLink: "https://example.com/app3",
-      imageUrl: back3
+      imageUrl: Dyamic
     }
   ];
 
