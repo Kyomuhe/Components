@@ -11,27 +11,48 @@ import SideBar from './components/SideBar';
 import Profile from './components/Profile';
 import SwipperPage from './pages/SwipperPage';
 import Payments from './pages/Payments';
+import TablePage from './pages/TablePage';
+import OrderDetailsPage from './components/OrderDetails';
+
+interface AppState {
+  activeTab: string | null;
+  showSidebar: boolean;
+  selectedOrderId: string | null;
+}
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string | null>(null);
-  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+  const [appState, setAppState] = useState<AppState>({
+    activeTab: null,
+    showSidebar: false,
+    selectedOrderId: null
+  });
   
   // receives the selected tab from Header or SideBar
   const handleTabChange = (tabName: string | null) => {
-    setActiveTab(tabName);
-    
-    // switching to a tab that requires the sidebar
-    if (['Profile', 'Overview', 'appointments', 'Notifications', 'Treat now, pay later',
+    setAppState(prevState => ({
+      ...prevState,
+      activeTab: tabName,
+      // Reseting selectedOrderId when changing tabs
+      selectedOrderId: null,
+      showSidebar: ['Profile', 'Overview', 'appointments', 'Notifications', 'Treat now, pay later',
          'Cart', 'Payments', 'Health savings', 'Insurance', 'Medications',
-         'Messages', 'Health Records', 'Dependents', 'Lab Tests', 'Settings'].includes(tabName || '')) {
-      setShowSidebar(true);
-    } else {
-      setShowSidebar(false);
-    }
+         'Messages', 'Health Records', 'Dependents', 'Lab Tests', 'Settings'].includes(tabName || '')
+    }));
+  };
+  
+  // function to handle order selection
+  const handleOrderSelect = (orderId: string) => {
+    setAppState(prevState => ({
+      ...prevState,
+      activeTab: 'OrderDetails',
+      selectedOrderId: orderId
+    }));
   };
   
   // Function rendering the appropriate component based on the selected tab
   const renderMainContent = () => {
+    const { activeTab, selectedOrderId } = appState;
+    
     if (!activeTab) {
       return <DefaultPage />;
     }
@@ -47,12 +68,16 @@ const App: React.FC = () => {
         return <Care />;
       case 'Lab tests':
         return <SwipperPage />;
-    
+      case 'Health tips':
+        // Passing the handleOrderSelect function to TablePage
+        return <TablePage onOrderSelect={handleOrderSelect} />;
+      case 'OrderDetails':
+        // Rendering OrderDetailsPage with the selected order ID
+        return selectedOrderId ? <OrderDetailsPage orderId={selectedOrderId} /> : <div>No order selected</div>;
       case 'Profile':
         return <Profile />;
       case 'Payments':
         return <Payments />;
-      
       default:
         return (
           <div className="p-4 text-center text-gray-600">
@@ -61,6 +86,8 @@ const App: React.FC = () => {
         );
     }
   };
+
+  const { activeTab, showSidebar } = appState;
 
   return (
     <CartProvider>
