@@ -13,6 +13,8 @@ import SwipperPage from './pages/SwipperPage';
 import Payments from './pages/Payments';
 import TablePage from './pages/TablePage';
 import OrderDetailsPage from './components/OrderDetails';
+import EPharmacy from './pages/EPharmacy';
+import SpecialistProfile from './pages/SpecialistProfile';
 
 interface AppState {
   activeTab: string | null;
@@ -61,7 +63,7 @@ const App: React.FC = () => {
       case 'Pharmacy':
         return <Pharmacy />;
       case 'Doctors':
-        return <TestimonialsPage />;
+        return <EPharmacy />;
       case 'Homecare':
         return <DemoPage onTabChange={handleTabChange} activeTab={activeTab} />;
       case 'Appointments':
@@ -78,6 +80,10 @@ const App: React.FC = () => {
         return <Profile />;
       case 'Payments':
         return <Payments />;
+      case 'Overview':
+        return <TestimonialsPage/>
+      case 'appointments':
+        return <SpecialistProfile/>
       default:
         return (
           <div className="p-4 text-center text-gray-600">

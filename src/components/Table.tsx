@@ -16,7 +16,7 @@ interface OrderTableProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
-  onOrderSelect: (orderId: string) => void; // Add this new prop
+  onOrderSelect: (orderId: string) => void; 
 }
 
 // Status filter options
