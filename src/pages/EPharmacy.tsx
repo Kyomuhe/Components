@@ -28,10 +28,10 @@ const EPharmacySection: React.FC = () => {
                   <img src={Frame} className='w-[24px] h-[24px]' alt="Frame icon" />
                 </div>
                 <div className="ml-4 flex-1 h-14 flex flex-col">
-                  <p className="font-['GT_Walsheim_Pro']">
+                  <p className="font-['GT_Walsheim_Pro'] text-xl">
                     Place an Order 
                   </p>
-                  <p className='text-xs'>Search or Upload Prescription</p>
+                  <p className='text-xs text-[#414D60]'>Search or Upload Prescription</p>
                 </div>
               </div>
             </div>
@@ -42,10 +42,10 @@ const EPharmacySection: React.FC = () => {
                   <img src={icon2} className='w-[24px] h-[24px]' alt="Icon 2" />
                 </div>
                 <div className="ml-4 flex-1 h-14 flex flex-col">
-                  <p className="font-['GT_Walsheim_Pro']">
+                  <p className="font-['GT_Walsheim_Pro'] text-xl">
                     Fullfillment & delivery
                   </p>
-                  <p className='text-xs'>Products packed $ delivered at doorstep</p>
+                  <p className='text-xs text-[#414D60]'>Products packed $ delivered at doorstep</p>
                 </div>
               </div>
               <span className="w-20 text-6xl md:text-7xl lg:text-8xl font-normal leading-none text-[#002B6B] opacity-15 font-['GT_Walsheim_Pro']">
@@ -62,10 +62,10 @@ const EPharmacySection: React.FC = () => {
                   <img src={icon1} className='w-[24px] h-[24px]' alt="Icon 1" />
                 </div>
                 <div className="ml-4 flex-1 h-14 flex flex-col">
-                  <p className="font-['GT_Walsheim_Pro']">
+                  <p className="font-['GT_Walsheim_Pro'] text-xl">
                     Need a refill?
                   </p>
-                  <p className='text-xs'>We will remind you when its Time</p>
+                  <p className='text-xs text-[#414D60]'>We will remind you when its Time</p>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ const EPharmacySection: React.FC = () => {
         />
         
         <div className="absolute top-12 left-[420px] text-white">
-          <h2 className="text-4xl font-semibold font-['GT_Walsheim_Pro']">Ncare</h2>
+          <h2 className="text-4xl  font-['GT_Walsheim_Pro']">Ncare</h2>
           <p className="mt-4 text-xl font-['GT_Walsheim_Pro']">We are the leading High Quality</p>
           <p className="text-xl font-['GT_Walsheim_Pro']">virtual Health Platforms.</p>
         </div>
