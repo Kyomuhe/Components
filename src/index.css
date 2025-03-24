@@ -29,3 +29,48 @@
 
 
 }
+.zigzag-circle {
+  clip-path: polygon(
+    /* We'll use 24 points to create 12 zigzags around the circle */
+    50% 0%,    /* Top point */
+    54% 10%,   /* Zigzag out */
+    58% 5%,    /* Zigzag in */
+    67% 15%,   /* Zigzag out */
+    70% 10%,   /* Zigzag in */
+    80% 25%,   /* Zigzag out */
+    82% 20%,   /* Zigzag in */
+    90% 38%,   /* Zigzag out */
+    88% 35%,   /* Zigzag in */
+    95% 54%,   /* Zigzag out */
+    90% 54%,   /* Zigzag in */
+    95% 70%,   /* Zigzag out */
+    88% 70%,   /* Zigzag in */
+    90% 82%,   /* Zigzag out */
+    82% 80%,   /* Zigzag in */
+    80% 90%,   /* Zigzag out */
+    70% 88%,   /* Zigzag in */
+    67% 95%,   /* Zigzag out */
+    58% 90%,   /* Zigzag in */
+    54% 95%,   /* Zigzag out */
+    50% 90%,   /* Zigzag in */
+    46% 95%,   /* Zigzag out */
+    42% 90%,   /* Zigzag in */
+    33% 95%,   /* Zigzag out */
+    30% 88%,   /* Zigzag in */
+    20% 90%,   /* Zigzag out */
+    18% 80%,   /* Zigzag in */
+    10% 82%,   /* Zigzag out */
+    12% 70%,   /* Zigzag in */
+    5% 70%,    /* Zigzag out */
+    10% 54%,   /* Zigzag in */
+    5% 54%,    /* Zigzag out */
+    12% 35%,   /* Zigzag in */
+    10% 38%,   /* Zigzag out */
+    18% 20%,   /* Zigzag in */
+    20% 25%,   /* Zigzag out */
+    30% 10%,   /* Zigzag in */
+    33% 15%,   /* Zigzag out */
+    42% 5%,    /* Zigzag in */
+    46% 10%    /* Zigzag out */
+  );
+}

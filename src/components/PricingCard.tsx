@@ -189,12 +189,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
             <div 
-              className={`w-4 h-4 rounded-full flex items-center justify-center ${isSelected ? 'bg-[#F2F4F5]' : 'bg-blue-500'}`}
+              className={`w-4 h-4 zigzag-circle flex items-center justify-center ${isSelected ? 'bg-[#F2F4F5]' : 'bg-blue-500'}`}
               style={{ 
                 width: '14.74px',
                 height: '14.74px',
                 background: isSelected ? '#FFFFFF' : '#0085FF',
                 position: 'relative',
+                
               }}
             >
               
