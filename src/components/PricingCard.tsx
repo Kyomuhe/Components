@@ -1,4 +1,6 @@
 import React from 'react';
+import {Check} from 'lucide-react';
+import patterns from '../images/patterns.png';
 
 interface PricingCardProps {
   title: string;
@@ -27,54 +29,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
   borderColor,
   onClick
 }) => {
-  const baseBorderWidth = 1; // Base border width in pixels
-  const topBorderWidth = baseBorderWidth * 3; // Top border is triple thickness
-  
-  // Generating V patterns
-  const generateVPatterns = () => {
-    const patterns = [];
-    const baseWidth = 20;
-    const baseHeight = 25;
-    const increment = 5;
-    
-    for (let i = 0; i < 12; i++) {
-      const width = baseWidth + (i * increment);
-      const height = baseHeight + (i * increment);
-      const top = 10 + (i * 5);
-      const right = Math.max(0, 5 - i);
-      const opacity = 0.1 + (i * 0.01);
-      
-      patterns.push(
-        <div 
-          key={i} 
-          className="absolute" 
-          style={{ 
-            top: `${top}%`, 
-            right: `${right}px`, 
-            opacity: opacity, 
-            zIndex: 1 
-          }}
-        >
-          <svg 
-            width={width} 
-            height={height} 
-            viewBox={`0 0 ${width} ${height}`} 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              d={`M0 0 L${width/2} ${height} L${width} 0`} 
-              stroke="white" 
-              strokeWidth="2" 
-              fill="none" 
-            />
-          </svg>
-        </div>
-      );
-    }
-    
-    return patterns;
-  };
+  const baseBorderWidth = 1;
+  const topBorderWidth = baseBorderWidth * 3;
   
   return (
     <div 
@@ -101,7 +57,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
       )}
       
       {/* V-shaped white patterns when selected */}
-      {isSelected && generateVPatterns()}
+      {isSelected && (
+        <img 
+          src={patterns} 
+          alt="Background Pattern" 
+          className="absolute top-0 right-0 w-full h-full object-cover opacity-20 z-0"
+        />
+      )}
       
       <div className="flex flex-col gap-0 z-10">
         <h2 
@@ -189,31 +151,21 @@ const PricingCard: React.FC<PricingCardProps> = ({
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
             <div 
-              className={`w-4 h-4 zigzag-circle flex items-center justify-center ${isSelected ? 'bg-[#F2F4F5]' : 'bg-blue-500'}`}
+              className={`w-4 h-4 rounded-full flex items-center justify-center ${isSelected ? 'bg-[#F2F4F5]' : 'bg-blue-500'}`}
               style={{ 
                 width: '14.74px',
                 height: '14.74px',
                 background: isSelected ? '#FFFFFF' : '#0085FF',
                 position: 'relative',
-                
               }}
             >
-              
               {/* Check mark */}
-              <svg 
-                width="10" 
-                height="10" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" 
-                  fill={isSelected ? '#0085FF' : '#FFFFFF'}
-                />
-              </svg>
+              <Check 
+                className='w-[10px] h-[10px]'
+                color={isSelected ? '#0085FF' : '#FFFFFF'}
+              />
             </div>
-            <span className={`text-sm font-semibold ${isSelected ? 'text-black' : 'text-black'}`}>{feature}</span>
+            <span className={`text-sm font-semibold ${isSelected ? 'text-white' : 'text-black'}`}>{feature}</span>
           </div>
         ))}
       </div>
