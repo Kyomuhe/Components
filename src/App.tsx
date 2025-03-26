@@ -17,6 +17,7 @@ import EPharmacy from './pages/EPharmacy';
 import SpecialistProfile from './pages/SpecialistProfile';
 import PricingPage from './pages/PricingPage';
 import FaqsPage from './pages/FaqsPage';
+import FeaturesComparisonPage from './pages/FeaturesComparisonPage';
 
 interface AppState {
   activeTab: string | null;
@@ -90,6 +91,8 @@ const App: React.FC = () => {
         return <PricingPage/>;
       case 'Notifications':
         return <FaqsPage/>
+      case 'Health savings':
+        return <FeaturesComparisonPage/>
       default:
         return (
           <div className="p-4 text-center text-gray-600">
