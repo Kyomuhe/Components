@@ -16,6 +16,7 @@ import OrderDetailsPage from './components/OrderDetails';
 import EPharmacy from './pages/EPharmacy';
 import SpecialistProfile from './pages/SpecialistProfile';
 import PricingPage from './pages/PricingPage';
+import FaqsPage from './pages/FaqsPage';
 
 interface AppState {
   activeTab: string | null;
@@ -87,6 +88,8 @@ const App: React.FC = () => {
         return <SpecialistProfile/>;
       case 'Treat now, pay later':
         return <PricingPage/>;
+      case 'Notifications':
+        return <FaqsPage/>
       default:
         return (
           <div className="p-4 text-center text-gray-600">
