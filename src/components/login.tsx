@@ -3,6 +3,8 @@ import { FaGoogle } from 'react-icons/fa';
 import PhoneField from '../components/PhoneField';
 import AppButton from '../components/AppButton';
 import FormInput from '../components/FormInput';
+import Input from './Input';
+
 
 interface FormData {
   email: string;
@@ -30,15 +32,15 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full font-gt-walsheim">
       <h2 className="text-blue-500 text-2xl font-semibold mb-4">Login, start better</h2>
-      <p className="text-[ #313957] text-xs mb-6">
+      <p className="text-grey mb-6">
         Welcome back, access the most trusted healthcare services at the comfort of your home or work
       </p>
 
       {/* Form Fields */}
       <form onSubmit={handleSubmit}>
-        <FormInput
+      <Input
           type="email"
           name="email"
           label="Email"
@@ -47,7 +49,6 @@ const Login: React.FC = () => {
           value={formData.email}
           onChange={handleChange}
         />
-
         <FormInput
           type="password"
           name="password"
@@ -76,7 +77,7 @@ const Login: React.FC = () => {
               checked={autoLogout}
               onChange={() => setAutoLogout(!autoLogout)}
             />
-            <span className ='text-xs'>Automatically log me out after 15 minutes of inactivity</span>
+            <span className ='text-grey'>Automatically log me out after 15 minutes of inactivity</span>
           </label>
         </div>
 

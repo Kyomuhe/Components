@@ -16,8 +16,12 @@ const FeatureComparisonTable: React.FC<FeatureComparisonProps> = ({ features }) 
     <div 
       className="
         w-[1000px] 
-        h-[488px] 
+        h-[455px] 
         overflow-hidden
+        border
+        border-[#0064D2]
+        border-opacity-5
+        font-gt-walsheim
       "
     >
       {/* Table Header */}
@@ -34,10 +38,10 @@ const FeatureComparisonTable: React.FC<FeatureComparisonProps> = ({ features }) 
         "
       >
         <div className="pl-4 text-left">Compare all ncare health features</div>
-        <div>BRONZE</div>
-        <div>SILVER</div>
-        <div>GOLD</div>
-        <div>PLATINUM</div>
+        <div className='text-custom-blue'>BRONZE</div>
+        <div className='text-custom-blue'>SILVER</div>
+        <div className='text-custom-blue'>PLATINUM</div>
+        <div className='text-custom-blue'>GOLD</div>
       </div>
 
       {/* Feature Rows */}
@@ -51,6 +55,7 @@ const FeatureComparisonTable: React.FC<FeatureComparisonProps> = ({ features }) 
             h-[50px] 
             items-center
             text-center
+            text-[#41474C]
             ${index % 2 === 0 ? 'bg-white ' : 'bg-[#0064D2] bg-opacity-5'}
           `}
         >

@@ -11,7 +11,7 @@ import ncareImage from '../images/ara1.png';
 
 const EPharmacySection: React.FC = () => {
   return (
-    <div className="w-full">
+    <div className="w-full font-gt-walsheim">
       <div className="w-full max-w-screen-xl mx-auto flex justify-between px-6 md:px-12 lg:px-24 py-16 md:py-22 bg-white relative space-x-14">
         <div className="w-full max-w-lg">
           <h2 className="text-4xl md:text-5xl font-normal leading-tight text-[#1E242C] font-['GT_Walsheim_Pro']">
@@ -23,7 +23,7 @@ const EPharmacySection: React.FC = () => {
               <span className="w-20 text-6xl md:text-7xl lg:text-8xl font-normal leading-none text-[#002B6B] opacity-15 font-['GT_Walsheim_Pro']">
                 01
               </span>
-              <div className="flex-1 h-24 ml-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-lg flex items-center">
+              <div className="flex-1 h-24 ml-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-[10px_25px_100px_0px_#002B6B40] flex items-center">
                 <div className="w-10 h-10 ml-4 rounded-full bg-[#E1E9FE] flex items-center justify-center">
                   <img src={Frame} className='w-[24px] h-[24px]' alt="Frame icon" />
                 </div>
@@ -37,7 +37,7 @@ const EPharmacySection: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-end">
-              <div className="flex-1 h-24 mr-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-lg flex items-center">
+              <div className="flex-1 h-24 mr-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-[10px_25px_100px_0px_#002B6B40] flex items-center">
                 <div className="w-10 h-10 ml-4 rounded-full bg-[#E1E9FE] flex items-center justify-center">
                   <img src={icon2} className='w-[24px] h-[24px]' alt="Icon 2" />
                 </div>
@@ -57,7 +57,7 @@ const EPharmacySection: React.FC = () => {
               <span className="w-20 text-6xl md:text-7xl lg:text-8xl font-normal leading-none text-[#002B6B] opacity-15 font-['GT_Walsheim_Pro']">
                 03
               </span>
-              <div className="flex-1 h-24 ml-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-lg flex items-center">
+              <div className="flex-1 h-24 ml-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-[10px_25px_100px_0px_#002B6B40] flex items-center">
                 <div className="w-10 h-10 ml-4 rounded-full bg-[#E1E9FE] flex items-center justify-center">
                   <img src={icon1} className='w-[24px] h-[24px]' alt="Icon 1" />
                 </div>
@@ -75,7 +75,7 @@ const EPharmacySection: React.FC = () => {
         <div className="w-full max-w-lg h-[490px] relative hidden md:block">
           <div className="absolute left-0 top-0">
             <img className="w-[180px] h-[280px] rounded-[20px]" src={ara3} alt="Ara 3" />
-            <div className="w-[180px] h-[80px] mt-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-lg flex items-center">
+            <div className="w-[180px] h-[80px] mt-4 rounded-[20px] border border-[#EDEEF0] bg-white shadow-[10px_25px_100px_0px_#002B6B40] flex items-center">
               <div className="w-[90px] h-[50px] ml-4 relative">
                 <img className="w-12 h-12 rounded-full absolute left-0 top-0 z-30" src={profile2} alt="Profile 2" />
                 <img className="w-12 h-12 rounded-full absolute left-3 top-0 z-20" src={profile3} alt="Profile 3" />

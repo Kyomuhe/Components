@@ -65,7 +65,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="font-sans w-full bg-white relative z-40" style={{ height: 'auto', minHeight: '118px' }} ref={headerRef}>
+    <div className="font-sans w-full bg-white relative z-40 font-gt-walsheim" style={{ height: 'auto', minHeight: '118px' }} ref={headerRef}>
       {/* Top Header */}
       <div className="flex justify-between items-center p-2.5 text-sm border-b border-gray-300 w-full" style={{ height: '39px' }}>
         <div className="flex items-center gap-2.5">
@@ -117,7 +117,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
                   className={`cursor-pointer transition-colors duration-200 mx-3 ${
                     activeTab === item ? 'text-blue-500 font-medium' : ''
                   } hover:text-blue-400`}
-                  style={{ width: '82px', height: '22px' }}
+                  style={{  height: '22px' }}
                 >
                   {item}
                 </span>

@@ -22,12 +22,11 @@ module.exports = {
 		  'grey': 'var(--grey)',
 		  'back': 'var(--back)',
 
-
-
-
-
-
 		},
+		fontFamily: {
+			'gt-walsheim': ['GT Walsheim Pro', 'sans-serif'],
+		  },
+	
 	  },
 	},
 	plugins: [],
