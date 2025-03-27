@@ -172,15 +172,15 @@ const DateTimeSelector: React.FC = () => {
   className="flex flex-wrap justify-start items-start gap-2"
   style={{ 
     width: '579.55px', 
-    minHeight: '82px', // Minimum height
-    height: 'auto', // Allow height to grow dynamically
+    minHeight: '82px', 
+    height: 'auto', 
   }}
 >
   {timeSlots.map((time) => (
     <div 
       key={time}
-      className={`flex items-center justify-center cursor-pointer border border-[#7E7E7E] rounded-[4px] ${
-        selectedTime === time ? 'bg-blue-700 text-white' : 'bg-white text-black'
+      className={`flex items-center justify-center cursor-pointer  rounded-[4px] ${
+        selectedTime === time ? 'bg-[#F6F6F6] text-black border-2 border-blue-500' : 'bg-white text-black border border-[#7E7E7E]'
       }`}
       style={{ 
         width: '93px', 
@@ -192,8 +192,9 @@ const DateTimeSelector: React.FC = () => {
       {time}
     </div>
   ))}
-</div>      </div>
-    </div>
+</div>
+</div>
+</div>
   );
 };
 
