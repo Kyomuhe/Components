@@ -18,6 +18,7 @@ import SpecialistProfile from './pages/SpecialistProfile';
 import PricingPage from './pages/PricingPage';
 import FaqsPage from './pages/FaqsPage';
 import FeaturesComparisonPage from './pages/FeaturesComparisonPage';
+import DateTimeSelector from './components/DateTimeSelector';
 
 interface AppState {
   activeTab: string | null;
@@ -93,6 +94,8 @@ const App: React.FC = () => {
         return <FaqsPage/>
       case 'Health savings':
         return <FeaturesComparisonPage/>
+      case 'Settings':
+        return <DateTimeSelector/>
       default:
         return (
           <div className="p-4 text-center text-gray-600">
