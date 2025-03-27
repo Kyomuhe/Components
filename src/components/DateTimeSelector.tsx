@@ -55,7 +55,7 @@ const DateTimeSelector: React.FC = () => {
 
   return (
     <div 
-      className="w-[579.55px] bg-white flex flex-col" 
+      className="w-[579.55px] bg-white flex flex-col font-gt-walsheim" 
       style={{ height: '682.65px' }}
     >
       {/* Title */}
@@ -109,7 +109,7 @@ const DateTimeSelector: React.FC = () => {
 
         {/* Days of Week */}
         <div 
-          className="grid grid-cols-7 text-center text-[#073B5B]"
+          className="grid grid-cols-7 font-semibold text-center text-[#073B5B]"
           style={{ 
             width: '487.06px', 
             height: '26.28px', 
@@ -129,7 +129,7 @@ const DateTimeSelector: React.FC = () => {
                 className={`text-center p-2 cursor-pointer ${
                   selectedDate && selectedDate.getDate() === day 
                     ? 'bg-[#112369] text-white' 
-                    : 'bg-[#E6EAF5] text-black'
+                    : 'bg-[#E6EAF5] text-gray'
                 }`}
                 style={{ 
                   width: '61.32px', 

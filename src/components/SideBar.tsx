@@ -73,7 +73,7 @@ const SideBar: React.FC<SideBarProps> = ({ onTabChange, activeTab }) => {
           tabName: 'Messages',
           className: 'text-custom-blue'
         },
-        { id: 'healthRecords', label: 'Health Records', icon: <FileText size={18} />, tabName: 'Health-records' },
+        { id: 'healthRecords', label: 'Health Records', icon: <FileText size={18} />, tabName: 'Health Records' },
         { id: 'dependents', label: 'Dependents', icon: <Users size={18} />, tabName: 'Dependents' },
         { id: 'labTests', label: 'Lab Tests, Results', icon: <FlaskConical size={18} />, tabName: 'Lab Tests' },
       ]
@@ -124,7 +124,7 @@ const SideBar: React.FC<SideBarProps> = ({ onTabChange, activeTab }) => {
         ))}
       </div>
 
-      {/* Upgrade banner - full width */}
+      {/* Upgrade banner */}
       <div className="w-full h-[35px] bg-custom-blue flex items-center px-4 gap-3 text-white">
         <Award size={18} />
         <span className="text-[15px] font-medium">Upgrade to silver plan</span>
