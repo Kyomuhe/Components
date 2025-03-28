@@ -34,7 +34,6 @@ const MedicationForm: React.FC = () => {
       <h1 className='text-[#101828] h-[24px]'>3. Are you currently taking any medications?</h1>
       <p className='text-[#667085] h-[15px]'>Please consider any medications you are currently taking, including those taken on a regular basis.</p>
 
-      {/* Yes/No Selection with Radio Buttons */}
       <div 
         className="flex"
         style={{
@@ -88,7 +87,7 @@ const MedicationForm: React.FC = () => {
         </label>
       </div>
 
-      {/* Medication Details Container - No Border */}
+      {/* Medication Details Container*/}
       {isMedicationTaken === 'Yes' && (
         <div 
           className="p-4"
@@ -117,7 +116,6 @@ const MedicationForm: React.FC = () => {
               />
             </div>
 
-            {/* Duration Container */}
             <div 
               className="flex pl-2 relative top-[16px] text-[#1D2939]"
               style={{
@@ -163,7 +161,7 @@ const MedicationForm: React.FC = () => {
         </div>
       )}
 
-      {/* Displayed Medications */}
+      {/* added Medications */}
       {medications.length > 0 && (
         <div className="mt-4">
           <h3 className="text-custom-blue mb-2">Current Medications:</h3>
@@ -181,7 +179,6 @@ const MedicationForm: React.FC = () => {
         <p className='text-[#667085] h-[24px]'>Examples: Appendectomy, Tonsillectomy, Knee replacement.</p>
       </div>
 
-      {/* Yes/No Selection with Radio Buttons */}
       <div 
         className="flex"
         style={{

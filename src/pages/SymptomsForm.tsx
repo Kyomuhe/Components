@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import AppButton from '../components/AppButton';
-import Form from './Form';
 
 interface SymptomsFormProps {
     onTabChange: (tabName: string) => void;
@@ -98,7 +97,6 @@ const SymptomsForm: React.FC<SymptomsFormProps> = ({ onTabChange }) => {
         </div>
       </div>
 
-      {/* Second Question: Symptoms Checklist */}
       <div className="space-y-4">
         <h3 className="h-[24px] text-[#101828] ">2. Do You have any of these Symptoms</h3>
         <div className="grid grid-cols gap-3">
@@ -124,7 +122,6 @@ const SymptomsForm: React.FC<SymptomsFormProps> = ({ onTabChange }) => {
         </div>
         <div className='h-[4px]'></div>
 
-        {/* complaint area */}
         <div className='flex flex-col'>
             <p className='h-[20px] text-gray'>Others,specify below</p>
         <textarea 
