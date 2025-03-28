@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import AppButton from '../components/AppButton';
+import Form from './Form';
 
-const SymptomsForm: React.FC = () => {
+interface SymptomsFormProps {
+    onTabChange: (tabName: string) => void;
+  }
+  
+
+const SymptomsForm: React.FC<SymptomsFormProps> = ({ onTabChange }) => {
   const [duration, setDuration] = useState<string>('');
   const [durationUnit, setDurationUnit] = useState<string>('Days');
   const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
@@ -20,6 +26,10 @@ const SymptomsForm: React.FC = () => {
     'Difficulty sleeping',
     'Periods'
   ];
+  const handleClick = () => {
+    onTabChange('Medications');
+
+  };
 
   const durationUnits = ['Hours', 'Days', 'Months', 'Years'];
 
@@ -135,6 +145,7 @@ const SymptomsForm: React.FC = () => {
         <AppButton
         variant="primary"
         className="flex items-center justify-center relative left-[800px]"
+        onClick={handleClick}
         leftIcon={null}
         rightIcon={null}
         >

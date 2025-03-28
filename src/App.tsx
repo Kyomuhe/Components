@@ -20,6 +20,7 @@ import FaqsPage from './pages/FaqsPage';
 import FeaturesComparisonPage from './pages/FeaturesComparisonPage';
 import DateTimeSelector from './components/DateTimeSelector';
 import SymptomsForm from './pages/SymptomsForm';
+import Form from './pages/Form';
 
 interface AppState {
   activeTab: string | null;
@@ -98,7 +99,9 @@ const App: React.FC = () => {
       case 'Settings':
         return <DateTimeSelector/>
       case 'Insurance':
-        return <SymptomsForm/>;
+        return <SymptomsForm onTabChange={handleTabChange} />;  // Pass onTabChange
+      case 'Medications':
+        return <Form/>
       default:
         return (
           <div className="p-4 text-center text-gray-600">
