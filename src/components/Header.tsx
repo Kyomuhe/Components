@@ -143,13 +143,7 @@ const Header: FC<HeaderProps> = ({ onTabChange, activeTab }) => {
       borderRadius: '8px',
     }}
   >
-    <span className="whitespace-nowrap" style={{
-      width: '104px',
-      height: '18px',
-      padding: '0 4px'
-    }}>
       Login Register
-    </span>
   </AppButton>
 </div>
           {/* Mobile Menu Toggle - Only shows on small screens */}
